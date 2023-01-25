@@ -1,6 +1,20 @@
-# YOUR PRODUCT/TEAM NAME
-> _Note:_ This document will evolve throughout your project. You commit regularly to this file while working on the project (especially edits/additions/deletions to the _Highlights_ section). 
- > **This document will serve as a master plan between your team, your partner and your TA.**
+# Master of Science in Applied Computing (MScAC), University of Toronto -- CSC301 MScAC
+* [Product Details](#product-details)
+  * [Q1: What is the product?](#q1-what-is-the-product)
+  * [Q2: Who are your target users?](#q2-who-are-your-target-users)
+  * [Q3: Why would your users choose your product? What are they using today to solve their problem/need?](#q3-why-would-your-users-choose-your-product-what-are-they-using-today-to-solve-their-problemneed)
+  * [Q4: What are the user stories that make up the Minumum Viable Product (MVP)?](#q4-what-are-the-user-stories-that-make-up-the-minumum-viable-product-mvp)
+  * [Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering](#q5-have-you-decided-on-how-you-will-build-it-share-what-you-know-now-or-tell-us-the-options-you-are-considering)
+
+* [Intellectual Property Confidentiality Agreement](#intellectual-property-confidentiality-agreement)
+* [Teamwork Details](#teamwork-details)
+  * [Q6: Have you met with your team?](#q6-have-you-met-with-your-team)
+  * [Q7: What are the roles & responsibilities on the team?](#q7-what-are-the-roles--responsibilities-on-the-team)
+  * [Q8: How will you work as a team?](#q8-how-will-you-work-as-a-team)
+  * [Q9: How will you organize your team?](#q9-how-will-you-organize-your-team)
+  * [Q10: What are the rules regarding how your team works?](#q10-what-are-the-rules-regarding-how-your-team-works)
+* [Communications](#communications)
+* [Collaboration: (Share your responses to Q8 & Q9 from A1)](#collaboration-share-your-responses-to-q8-q9-from-a1)
 
 ## Product Details
  
