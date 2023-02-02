@@ -26,9 +26,7 @@ We are planning to build an interactive, searchable website that is both desktop
 
 #### Q2: Who are your target users?
 
-  > Short (1 - 2 min' read max)
- * Be specific (e.g. a 'a third-year university student studying Computer Science' and not 'a student')
- * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
+[Link to target user persona](https://CSC301.xtensio.com/i9bux5im)
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
@@ -36,8 +34,9 @@ Through this interface, the intended users will have the opportunity to review, 
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
 
-User stories: https://docs.google.com/document/d/1fA3iWHW_igr3ZypRUNyxh7OzHxANfouvaqs9_6xGdaY/edit?usp=sharing
-Evidence of Approval: https://drive.google.com/file/d/1_v_hJyrganxtoAZTdtg2jWclPDmeOAuv/view?usp=sharing
+[Link to User stories](https://docs.google.com/document/d/1fA3iWHW_igr3ZypRUNyxh7OzHxANfouvaqs9_6xGdaY/edit?usp=sharing)
+
+[Link to Evidence of Approval](https://drive.google.com/file/d/1_v_hJyrganxtoAZTdtg2jWclPDmeOAuv/view?usp=sharing)
 
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
@@ -45,7 +44,7 @@ Evidence of Approval: https://drive.google.com/file/d/1_v_hJyrganxtoAZTdtg2jWclP
 * The product involves both front-end and back-end components. For the front-end, we will be using one of the modern front-end frameworks, likely one of React and Angular, which correspond to Javascript and Typescript, respectively. For the back-end, since the database is already up and running, we will only need a data processor along with some algorithms to determine the relevance of data to the searching criterias, which can be done in python.
 * The partner has clarified that the deployment of the interface is not our course team’s responsibility, as they are rebuilding their website. As long as the interface is implemented in the modern framework, they can easily integrate it into their website in a later stage. 
 * We will also be using Airtable, which is a cloud database service platform. That’s where the partner’s database is developed and populated, which our product will highly depend on. Instead of calling the API synchronously, we may cache the data before feeding them into the content processor, so that the program runs .
-* The architecture is illustrated below(https://www.canva.com/design/DAFZSsiwLXQ/oUos8lBSVdG8nE1OY8iCWg/edit?utm_content=DAFZSsiwLXQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+* The architecture is illustrated [here](https://www.canva.com/design/DAFZSsiwLXQ/oUos8lBSVdG8nE1OY8iCWg/edit?utm_content=DAFZSsiwLXQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 ----
 ## Intellectual Property Confidentiality Agreement 
