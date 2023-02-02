@@ -20,17 +20,8 @@
  
 #### Q1: What is the product?
 
- > Short (1 - 2 min' read)
- * Start with a single sentence, high-level description of the product.
- * Be clear - Describe the problem you are solving in simple terms.
- * Specify if you have a partner and who they are.
- * Be concrete. For example:
-    * What are you planning to build? Is it a website, mobile app, browser extension, command-line app, etc.?      
-    * When describing the problem/need, give concrete examples of common use cases.
-    * Assume your the reader knows nothing about the partner or the problem domain and provide the necessary context. 
- * Focus on *what* your product does, and avoid discussing *how* you're going to implement it.      
-   For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
- * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
+The project is a visualization and search interface for graduate internship abstracts. It is a web interface to display, filter, and search the public abstracts of the applied research internship projects carried out by students from the MScAC program at the University of Toronto. Our partner is Daniel Giovannini, the Associate Director for MScAC Partnerships.
+We are planning to build an interactive, searchable website that is both desktop- and mobile-friendly.
 
 
 #### Q2: Who are your target users?
@@ -41,45 +32,26 @@
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-> Short (1 - 2 min' read max)
- * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
- * Explain the benefits of your product explicitly & clearly. For example:
-    * Save users time (how and how much?)
-    * Allow users to discover new information (which information? And, why couldn't they discover it before?)
-    * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
-    * Does this application exist in another form? If so, how does your differ and provide value to the users?
-    * How does this align with your partner's organization's values/mission/mandate?
+Through this interface, the intended users will have the opportunity to review, filter, and search the public abstracts of MScAC projects from previous years to learn more about the types of projects undertaken by MScAC students and what counts as applied research for the MScAC program’s academic requirements.This interface will play a pivotal role in showcasing the breadth and impact of MScAC. As it provides abstracts of MScAC projects over the years, we believe this product can give insights to future graduate students with their own projects, and is also very helpful for prospective MScAC partner organizations to get a clearer idea of what types of projects have qualified for MScAC's applied-research requirements in previous years.
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
 
- * At least 5 user stories concerning the main features of the application - note that this can broken down further
- * You must follow proper user story format (as taught in lecture) ```As a <user of the app>, I want to <do something in the app> in order to <accomplish some goal>```
- * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
- * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
+User stories: https://docs.google.com/document/d/1fA3iWHW_igr3ZypRUNyxh7OzHxANfouvaqs9_6xGdaY/edit?usp=sharing
+Evidence of Approval: https://drive.google.com/file/d/1_v_hJyrganxtoAZTdtg2jWclPDmeOAuv/view?usp=sharing
 
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
-> Short (1-2 min' read max)
- * What is the technology stack? Specify languages, frameworks, libraries, PaaS products or tools to be used or being considered. 
- * How will you deploy the application?
- * Describe the architecture - what are the high level components or patterns you will use? Diagrams are useful here. 
- * Will you be using third party applications or APIs? If so, what are they?
+* The product involves both front-end and back-end components. For the front-end, we will be using one of the modern front-end frameworks, likely one of React and Angular, which correspond to Javascript and Typescript, respectively. For the back-end, since the database is already up and running, we will only need a data processor along with some algorithms to determine the relevance of data to the searching criterias, which can be done in python.
+* The partner has clarified that the deployment of the interface is not our course team’s responsibility, as they are rebuilding their website. As long as the interface is implemented in the modern framework, they can easily integrate it into their website in a later stage. 
+* We will also be using Airtable, which is a cloud database service platform. That’s where the partner’s database is developed and populated, which our product will highly depend on. Instead of calling the API synchronously, we may cache the data before feeding them into the content processor, so that the program runs .
+* The architecture is illustrated below(https://www.canva.com/design/DAFZSsiwLXQ/oUos8lBSVdG8nE1OY8iCWg/edit?utm_content=DAFZSsiwLXQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ----
 ## Intellectual Property Confidentiality Agreement 
-> Note this section is **not marked** but must be completed briefly if you have a partner. If you have any questions, please ask on Piazza.
->  
-**By default, you own any work that you do as part of your coursework.** However, some partners may want you to keep the project confidential after the course is complete. As part of your first deliverable, you should discuss and agree upon an option with your partner. Examples include:
-1. You can share the software and the code freely with anyone with or without a license, regardless of domain, for any use.
-2. You can upload the code to GitHub or other similar publicly available domains.
-3. You will only share the code under an open-source license with the partner but agree to not distribute it in any way to any other entity or individual. 
-4. You will share the code under an open-source license and distribute it as you wish but only the partner can access the system deployed during the course.
-5. You will only reference the work you did in your resume, interviews, etc. You agree to not share the code or software in any capacity with anyone unless your partner has agreed to it.
-
-**Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
-
-Briefly describe which option you have agreed to.
+* Students can share the software and the code freely with anyone with or without a license, regardless of domain, for any use.
+* Students can publish source code (e.g., on GitHub), design, and the software 
+* Students can use the project and software for job interviews and similar.
 
 ----
 
@@ -87,52 +59,94 @@ Briefly describe which option you have agreed to.
 
 #### Q6: Have you met with your team?
 
-Do a team-building activity in-person or online. This can be playing an online game, meeting for bubble tea, lunch, or any other activity you all enjoy.
-* Get to know each other on a more personal level.
-* Provide a few sentences on what you did and share a picture or other evidence of your team building activity.
-* Share at least three fun facts from members of you team (total not 3 for each member).
+Yes. We have generate a group on WeChat, and made several group calls.
+
+Here are some fun facts about our team members and our partner:
+* ChengYue Zhang likes LEGO
+* Yuyang Wang likes CSGO
+* Stephanie is a PADI open water diver
+* Daniel (our partner):  “I am also an experienced diver (Advanced Open Water Diver) and freediver, although more about scuba than freediving these days.”
 
 
 #### Q7: What are the roles & responsibilities on the team?
 
-Describe the different roles on the team and the responsibilities associated with each role. 
- * Roles should reflect the structure of your team and be appropriate for your project. One person may have multiple roles.  
- * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder.
- * At least one person must be identified as the dedicated partner liaison. They need to have great organization and communication skills.
- * Everyone must contribute to code. Students who don't contribute to code enough will receive a lower mark at the end of the term.
+Jiaguan Tang:
+* Role: Full Stack developer / Software Architect / Tester / Team Lead & Tech Lead
+* Responsibilities:
+  * Jump into and develop any part of the project
+  * Offer help to teammates better understand Web development
+  * Design the overall architecture of the web
+  * Write unit tests for the web
+  * Discuss with other tech leads and assign coding tasks 
+* Strength: React, Django, SQL
+* Weakness: UI/UX, Communication skill, leadership
 
-List each team member and:
- * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
- * Why did you choose them to take that role? Specify if they are interested in learning that part, experienced in it, or any other reasons. Do no make things up. This part is not graded but may be reviewed later.
+ChengYue Zhang:
+* Role: UX / UI designer / Backend developer / Dedicated partner liaison
+* Responsibilities:
+  * Design the interactive and intuitive user interface
+  * Schedule meetings with partner
+  * Help with backend development
+
+Fucheng  Zhuang:
+* Role: Full  Stack developer / Dedicated partner liaison / Team Lead & Tech Lead
+* Responsibilities:
+  * Communicate with the partner
+  * Back-end development
+  * Improve on UX
+  * Discuss with other tech leads and assign coding tasks
+
+Peng Du:
+* Role: Backend developer/Software Architect / Team Lead & Tech Lead
+* Responsibilities:
+  * Design and develop the data processor and searching algorithms.
+  * Come up with architectural solutions when facing technical issues
+  * Apply design patterns to make the product organized and scalable.
+  * Discuss with other tech leads and assign coding tasks  
+
+Yuyang Wang
+* Role: Frontend Developer
+* Responsibilities:
+  * HTML CSS
+  * Help with SQL development
+
+Stephanie Chen
+* Role: Frontend Developer / UX UI Designer
+* Responsibilities:
+  * HTML CSS, React
+  * Design user interface
+  * Help with backend development
+
+Ray Xu
+* Role: Frontend Developer
+* Responsibilities:
+  * HTML CSS, React
 
 
 #### Q8: How will you work as a team?
 
-Describe meetings (and other events) you are planning to have. 
- * When and where? Recurring or ad hoc? In-person or online?
- * What's the purpose of each meeting?
- * Other events could be coding sessions, code reviews, quick weekly sync meeting online, etc.
- * You should have 2 meetings with your project partner (if you have one) before D1 is due. Describe them here:
-   * You must keep track of meeting minutes and add them to your repo under "documents/minutes" folder
-   * You must have a regular meeting schedule established for the rest of the term.  
+Meetings with our partner will be held online through zoom, ideally twice before each assignment deadline. The purpose of each meeting is to share the process of the project with our partner, and discuss the details regarding software functions. Members working on the same aspect (i.e. front end) will have weekly meetings and will discuss through Wechat about any issue encountered. Events such as coding sessions, code reviews will be held based on each team member’s own schedule, and ideally there would be a sync group meeting once every week or two weeks. We will be meeting with our partner once every two weeks, starting from the week of Feb.13.
+
+[Link to Meeting Minutes](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/deliverable-1/team/minutes/meeting_minutes_files.md)
   
 #### Q9: How will you organize your team?
 
-List/describe the artifacts you will produce in order to organize your team.       
+* To-Do list or post issues on GitHub
+* TODOs in the code
+* Prioritize the tasks that need to be discussed with the partner in the following weeks. Save any extra ideas that are not tailored down within the team to the meeting with the partner, and ask for advice.
+* Tasks can be assigned to team members first based on personal preference and capability, then by workload to make sure each person has sufficient time to work on the tasks.
+* The status of work can be tracked by holding regular meetings, running the code to display the intermediate results, and see whether there are any issues posted on GitHub waiting to be solved.
 
- * Artifacts can be To-Do lists, Task boards, schedule(s), meeting minutes, etc.
- * We want to understand:
-   * How do you keep track of what needs to get done? (You must grant your TA and partner access to systems you use to manage work)
-   * **How do you prioritize tasks?**
-   * How do tasks get assigned to team members?
-   * How do you determine the status of work from inception to completion?
 
 #### Q10: What are the rules regarding how your team works?
 
 **Communications:**
- * What is the expected frequency? What methods/channels will be used? 
- * If you have a partner project, what is your process for communicating with your partner?
- 
-**Collaboration: (Share your responses to Q8 & Q9 from A1)**
- * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
- * How will you address the issue if one person doesn't contribute or is not responsive? 
+* We expect to have weekly meetings through either zoom or Wechat group calls. Any technical questions can be addressed at any time, and we expect to help each other as far as we can. Regarding the process for communicating with our partner Daniel, we expect to first share what we have done up till each meeting, and discuss the details of the project with our partner.
+
+**Collaboration:**
+1. How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
+  * We would try to find a time slot where all members working on the same aspect of the project (e.g. front end part) are available to have the meeting. Moreover, we would also have meetings as a whole group regularly to make sure the software can run as we expected, and help each other fix bugs. Since each aspect of the project has two or three team members to work on, we can communicate to each other easily to make sure actions are being done. GitHub can also provide information about contributions on the project for each team member.
+
+2. How will you address the issue if one person doesn't contribute or is not responsive?
+  * We would talk to this person to see if there is any time conflict with his/her other course assignments, and try to figure out a better way to collaborate. We can also have several team members to keep track of the overall process of the projects to see whether each part is done properly. If not, we would have a talk to the members responsible for the certain part. If the person is not responsive, we would directly phone call the person.
+
