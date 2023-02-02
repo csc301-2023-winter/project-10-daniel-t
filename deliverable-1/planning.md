@@ -44,7 +44,8 @@ Through this interface, the intended users will have the opportunity to review, 
 * The product involves both front-end and back-end components. For the front-end, we will be using one of the modern front-end frameworks, likely one of React and Angular, which correspond to Javascript and Typescript, respectively. For the back-end, since the database is already up and running, we will only need a data processor along with some algorithms to determine the relevance of data to the searching criterias, which can be done in python.
 * The partner has clarified that the deployment of the interface is not our course team’s responsibility, as they are rebuilding their website. As long as the interface is implemented in the modern framework, they can easily integrate it into their website in a later stage. 
 * We will also be using Airtable, which is a cloud database service platform. That’s where the partner’s database is developed and populated, which our product will highly depend on. Instead of calling the API synchronously, we may cache the data before feeding them into the content processor, so that the program runs .
-* The architecture is illustrated [here](https://www.canva.com/design/DAFZSsiwLXQ/oUos8lBSVdG8nE1OY8iCWg/edit?utm_content=DAFZSsiwLXQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+* The architecture is [illustrated here](https://www.canva.com/design/DAFZSsiwLXQ/oUos8lBSVdG8nE1OY8iCWg/edit?utm_content=DAFZSsiwLXQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+* The general interface should look [something like this](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/deliverable-1/mockup.jpg).
 
 ----
 ## Intellectual Property Confidentiality Agreement 
