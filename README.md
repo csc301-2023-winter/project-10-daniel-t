@@ -5,9 +5,7 @@
 
 ## Development Requirements
 
-## Installation
-
-## How to Use the System
+## How to Use
 
 ## How are Tasks Managed
 
