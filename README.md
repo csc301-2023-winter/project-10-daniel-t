@@ -1,2 +1,12 @@
-# project-10-daniel-t
-project-10-daniel-t created by GitHub Classroom
+# Master of Science in Applied Computing (MScAC), University of Toronto -- CSC301 MScAC
+## Description
+
+## Key Features
+
+## Development Requirements for Installing and Running the System
+
+## How to Use the System
+
+## How are Tasks Managed
+
+## License
