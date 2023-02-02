@@ -3,7 +3,9 @@
 
 ## Key Features
 
-## Development Requirements for Installing and Running the System
+## Development Requirements
+
+## Installation
 
 ## How to Use the System
 
