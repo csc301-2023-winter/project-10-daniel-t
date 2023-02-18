@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+
+<h1 class = "website">MScAC</h1>
+
+<!-- Filters -->
+
+<div id="filters">
+  <div id="year-filter" class="dropdown">
+    <div class = "filter-labels">
+      Internship Year
+    </div>
+    <button id="year-button" onclick="updateFilterBox('year')" class="dropbtn"> Choose year </button>
+    <div id="year" class="dropdown-content">
+      <a value="none">None</a>
+      <a value="2020">2020</a>
+      <a value="2021">2021</a>
+      <a value="2022">2022</a>
+    </div>
+  </div>
+
+  <div id="organization-filter" class="dropdown">
+    <div class = "filter-labels">
+      Project Organization
+    </div>
+    <button id="project-button" onclick="updateFilterBox('project')" class="dropbtn"> Choose organization </button>
+    <div id="project" class="dropdown-content">
+      <a value="none">None</a>
+      <a value="org1">Organization 1</a>
+      <a value="org2">Organization 2</a>
+      <a value="org3">Organization 3</a>
+    </div>
+  </div>
+
+  <div id="supervisor-filter" class="dropdown">
+    <div class = "filter-labels">
+      Academic Supervisor
+    </div>
+    <button id="supervisor-button" onclick="updateFilterBox('supervisor')" class="dropbtn"> Choose supervisor </button>
+    <div id="supervisor" class="dropdown-content">
+      <a value="none">None</a>
+      <a value="sup1">Supervisor 1</a>
+      <a value="sup2">Supervisor 2</a>
+      <a value="sup3">Supervisor 3</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Search bar -->
+<div id="search">
+  <input type="text" id="searchbar" name="searchbar" placeholder="Enter a search term" value="" onclick="searchbarClicked()" class="search-term">
+  <button onclick="search()" class="search-button">Search</button>
+  <p id="empty" class="alert">Please type in a search term.</p>
+</div>
+
+<!-- Tags -->
+<div id="tags">
+  <label id="tag-label">Try one of the search terms:</label>
+  <button onclick="search_tag(event)" class="tags">machine learning</button>
+  <button onclick="search_tag(event)" class="tags">robotics</button>
+</div>
+
+
+<!-- Project Results -->
+
+<div id = "results">
+  <label id="recent-project">2022 Applied Research Internship Projects</label>
+
+  <!-- Generated some fake projects for display purpose only -->
+  <div id="projects">
+    <div id="project 1" class="projects">
+      <a href="projectpage.html" class="project-name-style"> Project 1 </a><br>
+      <a href="#organization1" class="link-style"> Organization 1 </a><br>
+      <a href="#supervisor1" class="link-style">Supervisor 1</a><br>
+    </div>
+  
+    <div id="project 2" class="projects">
+      <a href="projectpage.html" class="project-name-style"> Project 2 </a><br>
+      <a href="#organization2" class="link-style"> Organization 2 </a><br>
+      <a href="#supervisor2" class="link-style">Supervisor 2</a><br>
+    </div>
+  
+    <div id="project 3" class="projects">
+      <a href="projectpage.html" class="project-name-style"> Project 3 </a><br>
+      <a href="#organization3" class="link-style"> Organization 3 </a><br>
+      <a href="#supervisor3" class="link-style">Supervisor 3</a><br>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
