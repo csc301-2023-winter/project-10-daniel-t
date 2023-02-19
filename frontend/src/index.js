@@ -70,15 +70,13 @@ function search() {
 
     var query = "?searchResults=" + encodeURIComponent(resultsDiv.innerHTML);
 
-    window.location.href = "resultspage.html" + query;
-
   } else {
-    for (var i = 0; i < matches.length; i++) {
+    for (var i = 0; i < matches.length; i+=2) {
       resultsDiv.innerHTML += matches[i];
     }
     var query = "?searchResults=" + encodeURIComponent(resultsDiv.innerHTML);
-    window.location.href = "resultspage.html" + query;
   }
+  window.location.href = "resultspage.html" + query;
   }
 }
 
