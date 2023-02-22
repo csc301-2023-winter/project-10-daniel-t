@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<div id="searchResults">
+
+<p id="demo"></p>
+
+<script>
+
+let text = "";
+let datas = '{{data}}';
+for (let i = 0; i < datas.length; i++) {
+    if (datas[i] === ','){
+        text += datas[i] + "<br>";
+    }else{
+        text += datas[i]
+    }
+
+
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+</div>
+</body>
+</html>

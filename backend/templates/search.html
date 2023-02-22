@@ -1,0 +1,28 @@
+<html>
+
+<body>
+<h2 style="text-align:center">CSC301 A2 simple Search demo-for backend</h2>
+<div style="text-align:center">
+
+    <form action="{{ url_for('search_results')}}" method="post">
+        Search(Anything): <input  type="text" name="results">
+        <input  type="submit" value="Search">
+    </form>
+    <br>
+    <form action="{{ url_for('retrieve_by_id')}}" method="post">
+        Retrieve the data by id: <input  type="text" name="id">
+        <input  type="submit" value="Search">
+        <br> [ note: should be the exact format inside quotations, ie. name+company ("Yihan Duan (Google)")]
+
+    </form>
+
+    <br>
+    <form action="{{ url_for('year_result')}}" method="post">
+        Search with year: <input  type="text" name="year">
+        <input  type="submit" value="Search">
+        <br>[ note: should be the exact format inside quotations("2019–20")]
+
+    </form>
+</div>
+</body>
+</html>
