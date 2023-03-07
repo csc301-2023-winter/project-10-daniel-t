@@ -24,7 +24,8 @@ Finally, we understand the importance of sharing thoughts and ideas to promote i
 ## Analyze the demo to our partner and his feedback
 ## Front End
 #### Demo reported to partner:
-Up until the progress of Assignment 2, we demoed the deployed website page to our partner, showing about how the searching function is likely to be used, and how each internship project information should be displayed on the page.
+In a recent meeting with our partner, we presented our progress of Assignment 2 with demonstration of our deployed website, showcasing how the search function would work and how the internship project information would be displayed on the page. We also demonstrated the user experience when searching for a keyword, including the prompt to the search results page. In the event that no results were found, we made sure that the user would be directed back to the previous page where the search was initiated.
+
 #### Feedback from partner:
 Daniel recommended displaying one internship project per row, rather than three, as this would accommodate the potentially extensive information stored for each project. This suggestion is particularly helpful as it highlights the importance of considering the information architecture when designing the user interface. By taking into account what information is stored in the database, we can design an interface that maximizes usability and user experience.
 
