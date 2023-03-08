@@ -12,9 +12,11 @@ Several strategies were implemented that worked well for us to ensure progress a
 
 Firstly, whenever a problem was encountered, it was immediately posted in the group chat for discussion. Team members would then contribute their thoughts and suggestions, leading to the eventual resolution of the issue. Finally, clear work division was established, with each team member being responsible for their own parts. This helped to ensure accountability and prevent overlap or confusion regarding tasks. 
 
-Secondly, in-group meetings were conducted, with most team members participating in discussions. This helped to facilitate collaboration and ensure that everyone's ideas and opinions were heard. 
+Secondly, the documenting files such as team reports, iteration-02-review.md are first being kept in Google Doc, and is shared among team mates. This strategy eases everyone to add TODOs, write about the content, comment on the content, and make modifications. After the editing is finished and agreed by all teammates, ChengYue Zhang is responsible for managing the contents into Markdown format, and push the file onto GitHub team repo. For reference to our Google Drive, see [this link](https://drive.google.com/drive/folders/1M5KyfLhumrCV2pxUpo3Xoz6zC9K4cD5F?usp=sharing).
 
-Thirdly, regular meetings with our partner were held every two weeks, which allowed for the reporting of progress and the exchange of advice and comments. This helped us to ensure that everyone was on the same page and that any potential issues could be addressed in a timely manner. 
+Thirdly, in-group meetings were conducted, with most team members participating in discussions. This helped to facilitate collaboration and ensure that everyone's ideas and opinions were heard. 
+
+Besides, regular meetings with our partner were held every two weeks, which allowed for the reporting of progress and the exchange of advice and comments. This helped us to ensure that everyone was on the same page and that any potential issues could be addressed in a timely manner. 
 
 Throughout the project, these strategies proved effective in promoting communication, collaboration, and accountability within our team.
 
