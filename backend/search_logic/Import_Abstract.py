@@ -17,7 +17,9 @@ headers = {
 response = requests.request("GET", url, headers=headers, data=payload)
 parsed_dict = response.json()
 # ---------Store each piece of data in  parallel lists.---------
-ids = [record['fields']['Record ID'].strip().strip("\u202a") for record in parsed_dict['records']]
+ids = [record['id'].strip().strip("\u202a") for record in parsed_dict['records']]
+# Note: The record_ids are not used.
+record_ids = [record['fields']['Record ID'].strip().strip("\u202a") for record in parsed_dict['records']]
 cohorts = [record['fields']['Cohort'].strip().strip("\u202a") for record in parsed_dict['records']]
 titles = [record['fields']['Internship title (ARIA)'].strip().strip("\u202a") for record in parsed_dict['records']]
 students = [record['fields']['Student'].strip().strip("\u202a") for record in parsed_dict['records']]
