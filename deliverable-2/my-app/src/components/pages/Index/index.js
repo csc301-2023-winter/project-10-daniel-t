@@ -11,6 +11,77 @@ const Index = () => {
 
 
 
+    let updateFilterBox = (event) => {
+        let filterId = event.target.id
+        // console.log(event.target)
+        let filterDropdown = document.getElementById(filterId.slice(0, -7));
+        let filterButton = document.getElementById(filterId);
+
+        //   When the user clicks on the button,
+        // toggle between hiding and showing the dropdown content
+        filterDropdown.classList.toggle("show");
+
+        // If there are results shown, replace the text in the button as the selected option
+        if (filterDropdown.classList.contains("show")) {
+            let filterLinks = filterDropdown.querySelectorAll("a");
+            for (let i = 0; i < filterLinks.length; i++) {
+                filterLinks[i].addEventListener("click", function() {
+                    filterButton.textContent = this.textContent;
+                    filterDropdown.classList.remove("show");
+                });
+            }
+        }
+        setRefresh(refresh+1)
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            let dropdowns = document.getElementsByClassName("dropdown-content");
+            let i;
+            for (i = 0; i < dropdowns.length; i++) {
+                let openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    let searchChange= (event)=>{
+        setSearch(event.target.value)
+    }
+
+    let goSearch =(event)=>{
+
+    }
+
+    function handle(e){
+        if(e.key === "Enter"){
+            goSearch()
+        }
+        return false;
+    }
+
+    useEffect(() => {
+        let home = document.getElementById("home")
+        if (home.style.color !== "white"){
+            let about = document.getElementById("about")
+            let contact = document.getElementById("contact")
+            home.style.color = "white"
+            home.style.backgroundColor = "rgb(0, 139, 176)"
+            about.style.color = null
+            about.style.backgroundColor = null
+            contact.style.color = null
+            contact.style.backgroundColor = null
+
+        }
+
+    }, [setRefresh, refresh])
+
+
+
+
+
 
 
     return <>
@@ -28,7 +99,7 @@ const Index = () => {
                 <div className = "filter-labels">
                     Internship Year
                 </div>
-                <button id="year-button" onclick="updateFilterBox('year')" className="dropbtn"> Choose year </button>
+                <button id="year-button" onClick={updateFilterBox}  className="dropbtn"> Choose year </button>
                 <div id="year" className="dropdown-content">
                     <a >None</a>
                     <a >2020</a>
@@ -41,7 +112,7 @@ const Index = () => {
                 <div className = "filter-labels">
                     Project Organization
                 </div>
-                <button id="project-button" onclick="updateFilterBox('project')" className="dropbtn"> Choose organization </button>
+                <button id="project-button" onClick={updateFilterBox} className="dropbtn"> Choose organization </button>
                 <div id="project" className="dropdown-content">
                     <a >None</a>
                     <a >Organization 1</a>
@@ -54,7 +125,7 @@ const Index = () => {
                 <div className = "filter-labels">
                     Academic Supervisor
                 </div>
-                <button id="supervisor-button" onclick="updateFilterBox('supervisor')" className="dropbtn"> Choose supervisor </button>
+                <button id="supervisor-button" onClick={updateFilterBox} className="dropbtn"> Choose supervisor </button>
                 <div id="supervisor" className="dropdown-content">
                     <a >None</a>
                     <a >Supervisor 1</a>
@@ -67,8 +138,9 @@ const Index = () => {
 
 
         <div id="search">
-            <input type="text" id="searchbar" name="searchbar" placeholder="Enter a search term" value="" onclick="searchbarClicked()" className="search-term"/>
-                <button onclick="search()" className="search-button">Search</button>
+            <input type="text" id="searchbar" name="searchbar" placeholder="Enter a search term" value={search}
+                   onChange={searchChange} onKeyPress={handle} className="search-term"/>
+                <button onClick={goSearch} className="search-button">Search</button>
                 <p id="empty" className="alert">Please type in a search term.</p>
         </div>
 
