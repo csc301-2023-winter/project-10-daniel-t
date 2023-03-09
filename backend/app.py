@@ -5,13 +5,23 @@
 from flask import Flask, jsonify, request, render_template
 from search_logic.search_results import *
 from retrieve_logic.Retrieve_methods import *
+from apscheduler.schedulers.background import BackgroundScheduler
+import atexit
+import subprocess
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def dashboard():
-    return render_template('search.html')
+def run_script():
+    """Run the Import_Abstract.py script periodically to update."""
+    subprocess.call(['python', './search_logic/Import_Abstract.py'])
+
+
+# Use a scheduler to run the Import_Abstract.py script every 5 hours
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=run_script, trigger='interval', hours=5)
+scheduler.start()
+atexit.register(lambda: scheduler.shutdown())
 
 
 @app.route('/Retrieve/partner/', methods=['GET'])
@@ -35,49 +45,20 @@ def keywords(word):
     return jsonify(related_keywords(word))
 
 
-# @app.route('/Search/results/<string:text>', methods=['GET'])
-# def search_results(text):
-#     return jsonify(search_result(text))
-
-@app.route('/Search/results', methods=['POST'])
+@app.route('/Search/results/', methods=['GET'])
 def search_results():
-    results = request.form['results']
-    data = search_result(results)
-    return render_template('results.html', data=data)
+    text = request.args.get('text')
+    year = request.args.get('year')
+    partner = request.args.get('partner')
+    supervisor = request.args.get('supervisor')
+    result = search_by_four_factors(text=text, year=year, partner=partner, supervisor=supervisor)
+    return jsonify(result)
+
 
 # APIs for retrieving results
-# @app.route('/Retrieve/id/<string:rid>', methods=['GET'])
-# def retrieve_by_id(rid):
-#     return jsonify(retrieve_id(rid))
-
-
-@app.route('/Retrieve/id', methods=['POST'])
-def retrieve_by_id():
-    id_number = request.form['id']
-    rid = retrieve_id(id_number)
-    return render_template('results.html', data=rid)
-
-
-@app.route('/Search/year', methods=['POST'])
-def year_result():
-    year = request.form['year']
-    year_data = search_by_year(year)
-    return render_template('results.html', data=year_data)
-
-
-# @app.route('/Search/year/<string:year>', methods=['GET'])
-# def year_result(year):
-#     return jsonify(search_by_year(year))
-
-
-@app.route('/Search/partner/<string:partner>', methods=['GET'])
-def partner_result(partner):
-    return jsonify(search_by_partner(partner))
-
-
-@app.route('/Search/acasup/<string:supervisor>', methods=['GET'])
-def acasup_result(supervisor):
-    return jsonify(search_by_acasup(supervisor))
+@app.route('/Retrieve/id/<string:rid>', methods=['GET'])
+def retrieve_by_id(rid):
+    return jsonify(retrieve_id(rid))
 
 
 if __name__ == "main":
