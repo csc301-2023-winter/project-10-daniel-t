@@ -1,6 +1,7 @@
 import {Outlet, useNavigate} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
+import './contact.css'
 import Helmet from "react-helmet"
 
 const Contact = () => {
@@ -25,10 +26,10 @@ const Contact = () => {
     }, [setRefresh, refresh])
 
     return <>
-        <div className="project-details">
-            <h1>Contact Information:</h1>
-            <p>Phone call: 123-456-7890</p>
-            <p>Email: abcde@email.com</p>
+        <div className="project-details" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+        <h1>Contact Information:</h1>
+        <p style={{width: '100%'}}>Phone call: 123-456-7890</p>
+        <a href="mailto:abcde@email.com" id="email" style={{width: '100%'}}>Email: abcde@email.com</a>
         </div>
     </>
 }
