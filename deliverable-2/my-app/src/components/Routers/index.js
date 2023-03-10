@@ -3,6 +3,8 @@ import Index from "../pages/Index";
 import Navbar from "../Common/navbar";
 import Contact from "../pages/contact";
 import About from "../pages/about";
+import ProjectDetail from "../pages/projectDetail";
+import SearchResult from "../pages/searchResult";
 const Router = () => {
     return (
         <BrowserRouter>
@@ -13,6 +15,8 @@ const Router = () => {
                     </Route>
                     <Route path="contact/" element={<Contact/>}/>
                     <Route path="about/" element={<About/>}/>
+                    <Route path="project/detail/" element={<ProjectDetail/>}/>
+                    <Route path="search/result/" element={<SearchResult/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

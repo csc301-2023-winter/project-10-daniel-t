@@ -3,10 +3,42 @@ import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
 import Helmet from "react-helmet"
 import './index.css'
+import contact from "../contact";
+
+const Years = ({years}) =>{
+    return<>
+        <a>None</a>
+        {years.map((year, index)=> (
+            <a key={index+1}>{year.slice(0, 4)}</a>
+        ))}
+    </>
+}
+
+const Partners = ({partners}) =>{
+    return<>
+        <a>None</a>
+        {partners.map((partner, index)=> (
+            <a key={index+1}>{partner}</a>
+        ))}
+    </>
+}
+
+const Supervisors = ({supervisors}) =>{
+    return<>
+        <a>None</a>
+        {supervisors.map((supervisor, index)=> (
+            <a key={index+1}>{supervisor}</a>
+        ))}
+    </>
+}
+
 
 const Index = () => {
     let navigate = useNavigate();
     const [search, setSearch] = useState('');
+    const [years, setYears] = useState([]);
+    const [partners, setPartners] = useState([]);
+    const [supervisors, setSupervisors] = useState([]);
     const {refresh, setRefresh} = useContext(APIContext)
 
 
@@ -48,10 +80,17 @@ const Index = () => {
     }
 
     let searchChange= (event)=>{
-        setSearch(event.target.value)
+        if (event.target.value){
+            setSearch(event.target.value)
+        }else {
+            setSearch(event.target.innerText)
+        }
+        return null
+
     }
 
     let goSearch =(event)=>{
+        return navigate("/search/result/")
 
     }
 
@@ -73,12 +112,30 @@ const Index = () => {
             about.style.backgroundColor = null
             contact.style.color = null
             contact.style.backgroundColor = null
-
         }
+        const requestOption = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        };
+
+        fetch("http://127.0.0.1:5000/Retrieve/partner/", requestOption)
+            .then(response => response.json())
+            .then(jason => {setPartners(jason)})
+            .catch()
+        fetch("http://127.0.0.1:5000/Retrieve/years", requestOption)
+            .then(response => response.json())
+            .then(jason => {setYears(jason)})
+            .catch()
+        fetch("http://127.0.0.1:5000/Retrieve/acasup", requestOption)
+            .then(response => response.json())
+            .then(jason => {setSupervisors(jason)})
+            .catch()
 
     }, [setRefresh, refresh])
 
-
+    // console.log(years)
 
 
 
@@ -101,10 +158,7 @@ const Index = () => {
                 </div>
                 <button id="year-button" onClick={updateFilterBox}  className="dropbtn"> Choose year </button>
                 <div id="year" className="dropdown-content">
-                    <a >None</a>
-                    <a >2020</a>
-                    <a >2021</a>
-                    <a >2022</a>
+                <Years years={years}/>
                 </div>
             </div>
 
@@ -114,10 +168,7 @@ const Index = () => {
                 </div>
                 <button id="project-button" onClick={updateFilterBox} className="dropbtn"> Choose organization </button>
                 <div id="project" className="dropdown-content">
-                    <a >None</a>
-                    <a >Organization 1</a>
-                    <a >Organization 2</a>
-                    <a >Organization 3</a>
+                <Partners partners={partners}/>
                 </div>
             </div>
 
@@ -127,10 +178,7 @@ const Index = () => {
                 </div>
                 <button id="supervisor-button" onClick={updateFilterBox} className="dropbtn"> Choose supervisor </button>
                 <div id="supervisor" className="dropdown-content">
-                    <a >None</a>
-                    <a >Supervisor 1</a>
-                    <a >Supervisor 2</a>
-                    <a >Supervisor 3</a>
+                <Supervisors supervisors={supervisors}/>
                 </div>
             </div>
         </div>
@@ -147,8 +195,8 @@ const Index = () => {
 
         <div id="tags">
             <label id="tag-label">Try one of the search terms:</label>
-            <button onclick="search_tag(event)" className="tags">machine learning</button>
-            <button onclick="search_tag(event)" className="tags">robotics</button>
+            <button onClick={searchChange} className="tags">machine learning</button>
+            <button onClick={searchChange} className="tags">robotics</button>
         </div>
 
 
@@ -156,7 +204,7 @@ const Index = () => {
         <div id = "results">
             <label id="recent-project">2022 Applied Research Internship Projects</label>
 
-            <div id="projects">
+            <div id="projects" >
                 <div id="project 1" className="projects">
                     <a href="" className="project-name-style"> Project 1 </a><br/>
                     <a href="#organization1" className="link-style"> Organization 1 </a><br/>

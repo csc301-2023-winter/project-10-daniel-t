@@ -19,17 +19,7 @@ const About = () =>{
             contact.style.color = null
             contact.style.backgroundColor = null
         }
-        const requestOption = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        };
 
-        // fetch("http://127.0.0.1:8000/restaurant/notif/all/", requestOption)
-        //     .then(response => response.json())
-        //     .then(jason => {setNotifications(jason.results)})
-        //     .catch()
 
 
 
