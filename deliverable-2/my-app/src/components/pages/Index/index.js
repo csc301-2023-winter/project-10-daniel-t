@@ -201,7 +201,7 @@ const Index = () => {
 
 
 
-        <div id = "results">
+        <div id = "results" className="results">
             <label id="recent-project">2022 Applied Research Internship Projects</label>
 
             <div id="projects" >

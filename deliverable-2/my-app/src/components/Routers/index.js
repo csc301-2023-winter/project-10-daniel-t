@@ -5,6 +5,7 @@ import Contact from "../pages/contact";
 import About from "../pages/about";
 import ProjectDetail from "../pages/projectDetail";
 import SearchResult from "../pages/searchResult";
+
 const Router = () => {
     return (
         <BrowserRouter>
