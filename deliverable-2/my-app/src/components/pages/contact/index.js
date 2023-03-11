@@ -28,7 +28,7 @@ const Contact = () => {
     return <>
         <div className="project-details" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
         <h1>Contact Information:</h1>
-        <p style={{width: '100%'}}>Phone call: 123-456-7890</p>
+        <p className="phone" style={{width: '100%'}}>Phone call: 123-456-7890</p>
         <a href="mailto:abcde@email.com" id="email" style={{width: '100%'}}>Email: abcde@email.com</a>
         </div>
     </>
