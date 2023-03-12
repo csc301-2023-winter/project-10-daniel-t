@@ -9,7 +9,7 @@ const Years = ({years}) =>{
     return<>
         <a>None</a>
         {years.map((year, index)=> (
-            <a key={index+1}>{year.slice(0, 4)}</a>
+            <a key={index+1}>{year}</a>
         ))}
     </>
 }

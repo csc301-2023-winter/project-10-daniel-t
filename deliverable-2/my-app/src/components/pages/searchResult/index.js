@@ -64,6 +64,7 @@ const SearchResult = () =>{
             .then(response => {
                 return response.json()})
             .then(jason => {setProjects(jason)
+                console.log(jason)
             })
         // if (projectsDetails.length < projects.length){
         //     for (let i = 0; i < projects.length; i++){
