@@ -52,7 +52,10 @@ def search_results():
     partner = request.args.get('partner')
     supervisor = request.args.get('supervisor')
     result = search_by_four_factors(text=text, year=year, partner=partner, supervisor=supervisor)
-    return jsonify(result)
+    final_result = []
+    for ids in result:
+        final_result.append(retrieve_id(ids))
+    return jsonify(final_result)
 
 
 # APIs for retrieving results
