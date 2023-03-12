@@ -15,17 +15,23 @@ const Projects = ({projectsDetail}) => {
         return <h1>No Result Found</h1>
     }
     let goDetail = (event) =>{
-        return navigate("/project/" )
+
+        // let element = event.target
+        // if (! element.key){
+        //     element = element.parentElement
+        // }
+        // console.log(event.target, 1)
+        return navigate("/project/" + event.target.name + "/detail/" )
     }
     return <>
         <h1>{projectsDetail.length} Result Found</h1>
         {projectsDetail.map((project, index) =>(
-            <div id="project 3" className="projects" key={index}>
-                <a className="project-name-style"> {project[0]} </a><br/>
-                <a className="link-style"> {project[3]} </a><br/>
-                <a className="link-style">{project[2]}</a><br/>
+            <div id="project 3" className="projects" key={index} >
+                <b className="project-name-style"> {project[0]} </b><br/>
+                <span className="link-style project_owner"> {project[3]} </span><br/>
+                <span className="link-style project_supervisor">{project[2]}</span><br/>
+                <button name={project[8]} onClick={goDetail}>Details</button>
             </div>
-            // <h1 key={index}>{project}</h1>
             ))}
     </>
 }
