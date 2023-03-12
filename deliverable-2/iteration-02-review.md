@@ -54,7 +54,3 @@ This suggestion is particularly helpful as it highlights the importance of consi
 #### Back end
 #### Demo reported to partner:
 #### Feedback from partner:
-
-#### Testing
-#### Demo reported to partner:
-#### Feedback from partner:
