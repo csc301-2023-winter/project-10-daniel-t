@@ -1,12 +1,14 @@
 import {Outlet, useNavigate} from "react-router-dom";
 import {useContext, useEffect, useState, useRef} from "react";
 import {APIContext} from "../../Contexts/APIContext";
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, IconButton } from '@chakra-ui/react'
 import {useJsApiLoader,GoogleMap,MarkerF} from '@react-google-maps/api'
   
 const center = { lat: 43.659020, lng: -79.391190 }
   
 const Map = () => {
+
+  const [map, setMap] = useState();
 
   const onLoad = marker => {
     console.log('marker is this: ', marker)
@@ -24,13 +26,17 @@ const Map = () => {
 
   return (
     <Flex
-      position='absolute'
-      // flexDirection='column'
+      position='relative'
+      flexDirection='column'
       alignItems='center'
       h='100vh'
       w='100vw'
     >
-      <Box position='absolute' left='30%' top='30%' h='80%' w='80%'>
+      <Box 
+      position='relative' 
+      // left='30%' top='20%' 
+      h='80%' w='80%'
+      >
         {/* Google Map Box */}
         
         <GoogleMap
@@ -43,10 +49,13 @@ const Map = () => {
             mapTypeControl: false,
             fullscreenControl: false,
           }}
+          onLoad={(map) => {
+            setMap(map);
+          }}
         >
-          <MarkerF position={center} onLoad={onLoad}/>
-
+          <MarkerF position={center} onClick={() => map.setCenter(center)}/>
         </GoogleMap>
+        <button onClick={() => map.setCenter(center)}> Re-center</button>
       </Box>
     </Flex>
   )
