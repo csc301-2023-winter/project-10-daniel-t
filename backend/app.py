@@ -40,7 +40,7 @@ def retrieve_all_acasup():
 
 
 # APIs for searching results
-@app.route('/Search/keyword/<string:word>', methods=['GET'])
+@app.route('/abstracts/Search/keyword/<string:word>', methods=['GET'])
 def keywords(word):
     return jsonify(related_keywords(word))
 
