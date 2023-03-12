@@ -24,28 +24,28 @@ scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
 
-@app.route('/Retrieve/partner/', methods=['GET'])
+@app.route('/abstracts/Retrieve/partner/', methods=['GET'])
 def retrieve_all_partner():
     return jsonify(retrieve_partner())
 
 
-@app.route('/Retrieve/years', methods=['GET'])
+@app.route('/abstracts/Retrieve/years', methods=['GET'])
 def retrieve_all_years():
     return jsonify(retrieve_years())
 
 
-@app.route('/Retrieve/acasup', methods=['GET'])
+@app.route('/abstracts/Retrieve/acasup', methods=['GET'])
 def retrieve_all_acasup():
     return jsonify(retrieve_acasup())
 
 
 # APIs for searching results
-@app.route('/Search/keyword/<string:word>', methods=['GET'])
+@app.route('/abstracts/Search/keyword/<string:word>', methods=['GET'])
 def keywords(word):
     return jsonify(related_keywords(word))
 
 
-@app.route('/Search/results/', methods=['GET'])
+@app.route('/abstracts/Search/results/', methods=['GET'])
 def search_results():
     text = request.args.get('text')
     year = request.args.get('year')
@@ -62,7 +62,7 @@ def search_results():
 
 
 # APIs for retrieving results
-@app.route('/Retrieve/id/<string:rid>', methods=['GET'])
+@app.route('/abstracts/Retrieve/id/<string:rid>', methods=['GET'])
 def retrieve_by_id(rid):
     return jsonify(retrieve_id(rid))
 
