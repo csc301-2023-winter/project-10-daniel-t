@@ -5,15 +5,23 @@ import Helmet from "react-helmet"
 
 
 const Projects = ({projectsDetail}) => {
-    console.log(projectsDetail, 123)
+    // console.log(projectsDetail, 123)
+    if (projectsDetail === null){
+        return <h1>Please Wait</h1>
+    }
+
+    if (! projectsDetail.length){
+        return <h1>No Result Found</h1>
+    }
     return <>
+        <h1>{projectsDetail.length} Result Found</h1>
         {projectsDetail.map((project, index) =>(
-            // <div id="project 3" className="projects">
-            //     <a className="project-name-style"> Project 3 </a><br/>
-            //     <a className="link-style"> Organization 3 </a><br/>
-            //     <a className="link-style">Supervisor 3</a><br/>
-            // </div>
-            <h1 key={index}>{project}</h1>
+            <div id="project 3" className="projects">
+                <a className="project-name-style"> {project[0]} </a><br/>
+                <a className="link-style"> {project[3]} </a><br/>
+                <a className="link-style">{project[2]}</a><br/>
+            </div>
+            // <h1 key={index}>{project}</h1>
             ))}
     </>
 }
@@ -21,7 +29,7 @@ const Projects = ({projectsDetail}) => {
 
 const SearchResult = () =>{
     const {refresh, setRefresh} = useContext(APIContext)
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState(null);
     // const [projectsDetails, setProjectsDetails] = useState([]);
     let input = useParams().searchInput
     let year = useParams().year
@@ -83,7 +91,7 @@ const SearchResult = () =>{
 
 
     return <>
-        <h1>{searchUrl}</h1>
+        {/*<h1>{searchUrl}</h1>*/}
         <Projects projectsDetail={projects}/>
     </>
 }
