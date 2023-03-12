@@ -90,7 +90,17 @@ const Index = () => {
     }
 
     let goSearch =(event)=>{
-        return navigate("/search/result/")
+        let year = document.getElementById("year-button").innerText
+        let partner = document.getElementById("project-button").innerText
+        let supervisor = document.getElementById("supervisor-button").innerText
+        let input = document.getElementById("searchbar").value
+        let lis = [year, partner, supervisor]
+        for (let i = 0; i < 3; i++){
+            if (lis[i] === "None" || lis[i].slice(0, 7) === "Choose "){
+                lis[i] = "all"
+            }
+        }
+        return navigate("/"+ input +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
 
     }
 
