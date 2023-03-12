@@ -3,12 +3,12 @@
 
 
 ## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the packages listed in requirements.txt.
+First time running the program
 
 
 ```bash
-pip install -r requirements.txt
+chmod +x script-name-here.sh
+./run.sh
 ```
 
 ## API examples
@@ -16,13 +16,14 @@ pip install -r requirements.txt
 (https://docs.google.com/document/d/1AcwCKLqPFgFgY8HhxObEbsZpkHKncXxYYj4nI4-xxGc/edit)
 
 ## Usage
+If it's not the first time running
 
 ```python
-flask run
+flask run -h localhost -p 8000
 ```
 ## Usage
 
-If Access  was denied, try to clear the browser cookies
+If Access was denied, try to clear the browser cookies
 
 ## Contributing
 
