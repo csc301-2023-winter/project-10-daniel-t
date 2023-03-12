@@ -54,7 +54,10 @@ def search_results():
     result = search_by_four_factors(text=text, year=year, partner=partner, supervisor=supervisor)
     final_result = []
     for ids in result:
-        final_result.append(retrieve_id(ids))
+        to_append = list(retrieve_id(ids))
+        to_append.append(ids)
+        final_result.append(tuple(to_append))
+
     return jsonify(final_result)
 
 
