@@ -35,7 +35,7 @@ Moreover, Jiaguan Tang and Yuyang Wang, who belongs to the Testing subgroup in A
 In addition, we will continue holding regular in-group meetings every Thursday to keep everyone on the same page and facilitate productive discussions. We also plan to maintain our reporting process to our partner to ensure that we are meeting expectations and receiving feedback as needed.
 
 #### Q3(b). Integration & Next steps
-Front end would be working on building React, transfering the html blocks previously developed into single components in javascript, and then process the data accessed from backend database.
+Front end would be working on building React, transfering the html blocks previously developed into single components in javascript, and then process the data accessed from backend database. We will also work on our UI design and improve responsiveness of our website.
 
 
 ## Product - Review
