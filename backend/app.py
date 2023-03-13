@@ -64,5 +64,5 @@ def retrieve_by_id(rid):
     return jsonify(retrieve_id(rid))
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     app.run()
