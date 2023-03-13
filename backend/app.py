@@ -8,9 +8,10 @@ from retrieve_logic.Retrieve_methods import *
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
 import subprocess
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 def run_script():
     """Run the Import_Abstract.py script periodically to update."""
