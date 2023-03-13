@@ -130,15 +130,15 @@ const Index = () => {
             }
         };
 
-        fetch("http://127.0.0.1:5000/Retrieve/partner/", requestOption)
+        fetch("https://vm008.teach.cs.toronto.edu/abstracts/Retrieve/partner/", requestOption)
             .then(response => response.json())
             .then(jason => {setPartners(jason)})
             .catch()
-        fetch("http://127.0.0.1:5000/Retrieve/years", requestOption)
+        fetch("https://vm008.teach.cs.toronto.edu/abstracts/Retrieve/years", requestOption)
             .then(response => response.json())
             .then(jason => {setYears(jason)})
             .catch()
-        fetch("http://127.0.0.1:5000/Retrieve/acasup", requestOption)
+        fetch("https://vm008.teach.cs.toronto.edu/abstracts/Retrieve/acasup", requestOption)
             .then(response => response.json())
             .then(jason => {setSupervisors(jason)})
             .catch()

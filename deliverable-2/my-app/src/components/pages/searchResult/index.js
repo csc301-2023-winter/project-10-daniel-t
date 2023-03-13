@@ -58,7 +58,7 @@ const SearchResult = () =>{
         input = ""
     }else {input = "=" + encodeURIComponent(input)}
 
-    let searchUrl = "http://127.0.0.1:5000/Search/results/?text"+ input +"&year"+ year
+    let searchUrl = "https://vm008.teach.cs.toronto.edu/abstracts/Search/results/?text"+ input +"&year"+ year
         +"&partner"+ partner +"&supervisor" + supervisor
 
     let search_options = {

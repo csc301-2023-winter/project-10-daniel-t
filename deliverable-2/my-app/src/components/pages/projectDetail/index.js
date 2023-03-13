@@ -24,7 +24,7 @@ const ProjectDetail = () =>{
         contact.style.color = null
         contact.style.backgroundColor = null
 
-        fetch("http://127.0.0.1:5000/Retrieve/id/" + project_id, search_options)
+        fetch("https://vm008.teach.cs.toronto.edu/abstracts/Retrieve/id/" + project_id, search_options)
             .then(response => response.json())
             .then(jason => {console.log(jason)
                 setDetail(jason)
