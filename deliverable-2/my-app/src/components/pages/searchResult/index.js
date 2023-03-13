@@ -5,6 +5,7 @@ import Helmet from "react-helmet"
 
 
 const Projects = ({projectsDetail}) => {
+    let navigate = useNavigate()
     // console.log(projectsDetail, 123)
     if (projectsDetail === null){
         return <h1>Please Wait</h1>
@@ -13,15 +14,24 @@ const Projects = ({projectsDetail}) => {
     if (! projectsDetail.length){
         return <h1>No Result Found</h1>
     }
+    let goDetail = (event) =>{
+
+        // let element = event.target
+        // if (! element.key){
+        //     element = element.parentElement
+        // }
+        // console.log(event.target, 1)
+        return navigate("/project/" + event.target.name + "/detail/" )
+    }
     return <>
         <h1>{projectsDetail.length} Result Found</h1>
         {projectsDetail.map((project, index) =>(
-            <div id="project 3" className="projects">
-                <a className="project-name-style"> {project[0]} </a><br/>
-                <a className="link-style"> {project[3]} </a><br/>
-                <a className="link-style">{project[2]}</a><br/>
+            <div id="project 3" className="projects" key={index} >
+                <b className="project-name-style"> {project[0]} </b><br/>
+                <span className="link-style project_owner"> {project[3]} </span><br/>
+                <span className="link-style project_supervisor">{project[2]}</span><br/>
+                <button name={project[8]} onClick={goDetail}>Details</button>
             </div>
-            // <h1 key={index}>{project}</h1>
             ))}
     </>
 }
@@ -48,7 +58,7 @@ const SearchResult = () =>{
         input = ""
     }else {input = "=" + encodeURIComponent(input)}
 
-    let searchUrl = "http://127.0.0.1:5000/Search/results/?text"+ input +"&year"+ year
+    let searchUrl = "https://vm008.teach.cs.toronto.edu/abstracts/Search/results/?text"+ input +"&year"+ year
         +"&partner"+ partner +"&supervisor" + supervisor
 
     let search_options = {
@@ -74,18 +84,6 @@ const SearchResult = () =>{
             .then(jason => {setProjects(jason)
                 console.log(jason)
             })
-        // if (projectsDetails.length < projects.length){
-        //     for (let i = 0; i < projects.length; i++){
-        //         fetch("http://127.0.0.1:5000/Retrieve/id/" + projects[i], search_options)
-        //             .then(response => response.json())
-        //             .then(jason => {
-        //                 projectsDetails.push(jason)
-        //                 setProjectsDetails(projectsDetails)
-        //                 console.log(jason)
-        //             })
-        //             .then(() => console.log(projectsDetails))
-        //     }
-        // }
 
     }, [setRefresh, refresh])
 

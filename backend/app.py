@@ -8,9 +8,10 @@ from retrieve_logic.Retrieve_methods import *
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
 import subprocess
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 def run_script():
     """Run the Import_Abstract.py script periodically to update."""
@@ -24,28 +25,28 @@ scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
 
-@app.route('/Retrieve/partner/', methods=['GET'])
+@app.route('/abstracts/Retrieve/partner/', methods=['GET'])
 def retrieve_all_partner():
     return jsonify(retrieve_partner())
 
 
-@app.route('/Retrieve/years', methods=['GET'])
+@app.route('/abstracts/Retrieve/years', methods=['GET'])
 def retrieve_all_years():
     return jsonify(retrieve_years())
 
 
-@app.route('/Retrieve/acasup', methods=['GET'])
+@app.route('/abstracts/Retrieve/acasup', methods=['GET'])
 def retrieve_all_acasup():
     return jsonify(retrieve_acasup())
 
 
 # APIs for searching results
-@app.route('/Search/keyword/<string:word>', methods=['GET'])
+@app.route('/abstracts/Search/keyword/<string:word>', methods=['GET'])
 def keywords(word):
     return jsonify(related_keywords(word))
 
 
-@app.route('/Search/results/', methods=['GET'])
+@app.route('/abstracts/Search/results/', methods=['GET'])
 def search_results():
     text = request.args.get('text')
     year = request.args.get('year')
@@ -54,12 +55,15 @@ def search_results():
     result = search_by_four_factors(text=text, year=year, partner=partner, supervisor=supervisor)
     final_result = []
     for ids in result:
-        final_result.append(retrieve_id(ids))
+        to_append = list(retrieve_id(ids))
+        to_append.append(ids)
+        final_result.append(tuple(to_append))
+
     return jsonify(final_result)
 
 
 # APIs for retrieving results
-@app.route('/Retrieve/id/<string:rid>', methods=['GET'])
+@app.route('/abstracts/Retrieve/id/<string:rid>', methods=['GET'])
 def retrieve_by_id(rid):
     return jsonify(retrieve_id(rid))
 
