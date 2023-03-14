@@ -25,7 +25,7 @@ scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
 
-@app.route("/abstracts", methods=["GET"])
+@app.route("/abstracts/", methods=["GET"])
 def redirect_external():
     return redirect("http://localhost:3000")
 
