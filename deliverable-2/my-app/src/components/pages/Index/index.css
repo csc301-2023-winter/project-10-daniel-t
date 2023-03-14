@@ -1,10 +1,13 @@
 body{ margin: 0%; }
-
+/*.Title{*/
+/*    text-align: left;*/
+/*}*/
 
   /* Website title */
 .website {
     display: flex; 
-    justify-content: center; 
+    justify-content: center;
+    margin-bottom: 40px;
     font-size: 3vmax;
     margin-top: 50px;
 }

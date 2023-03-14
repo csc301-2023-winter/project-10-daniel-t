@@ -153,7 +153,7 @@ const Index = () => {
 
 
     return <>
-        <Helmet>
+        <Helmet >
             <title>MScAC</title>
             <meta charSet="UTF-8" />
         </Helmet>
