@@ -2,8 +2,8 @@
 
 ## Iteration 2 - Review & Retrospect
 
- * When: March.1, 2023
- * Where: Zoom
+ * When: March.13, 2023
+ * Where: Microsoft Team
 
 ## Process - Reflection
 
@@ -35,7 +35,10 @@ Moreover, Jiaguan Tang and Yuyang Wang, who belongs to the Testing subgroup in A
 In addition, we will continue holding regular in-group meetings every Thursday to keep everyone on the same page and facilitate productive discussions. We also plan to maintain our reporting process to our partner to ensure that we are meeting expectations and receiving feedback as needed.
 
 #### Q3(b). Integration & Next steps
-Front end would be working on building React, transfering the html blocks previously developed into single components in javascript, and then process the data accessed from backend database. We will also work on our UI design and improve responsiveness of our website.
+Front end would be working on building React, transfering the html blocks previously developed into single components in javascript, and then process the data accessed from backend database. Front end will also work on the design of the UI, and responsiveness of the website.
+
+The backend subteam will continue working on the optimizations of searching algorithms, as well as collaborating with the frontend team and develop any further API that are needed. Another major task is to deploy the server on DCS and provide guidance to testing team to testify the APIs.
+
 
 
 ## Product - Review
@@ -43,14 +46,30 @@ Front end would be working on building React, transfering the html blocks previo
 #### Q4. How was your product demo?
 #### Front End
 #### Demo reported to partner:
-We presented our progress with demonstration of our deployed website, showcasing how the search function would work and how the internship project information would be displayed on the page. We also demonstrated the user experience when searching for a keyword, including the prompt to the search results page. In the event that no results were found, we made sure that the user would be directed back to the previous page where the search was initiated.
+We presented our progress with demonstration of our deployed website, showcasing how the search function would work and how the internship project information would be displayed on the page. We also demonstrated the user experience when searching for a keyword, including the prompt to the search results page. In the event that no results were found, we made sure that the user would be directed back to the previous page where the search was initiated. In the Contact page, Google Map API is implemented to show the location of MScAC office, with a location pin pointing out the place in the map, and a re-centering button to re-center the map such that when the user drags the map to see surrounding locations, he/she can go back to the spot with office location at the middle of the map.
+
 
 #### Feedback from partner:
-Daniel recommended displaying one internship project per row, rather than three, as this would accommodate the potentially extensive information stored for each project. 
+Daniel recommended displaying one internship project per row, rather than three, as this would accommodate the potentially extensive information stored for each project. The filters are recommended to be searchable, that is, by clicking it would be a drop down menu listing all the options, but with a small search bar, and then the user can directly search for an option, rather than searching through each option one by one.
+
 
 #### Learnings:
-This suggestion is particularly helpful as it highlights the importance of considering the information architecture when designing the user interface. By taking into account what information is stored in the database, we can design an interface that maximizes usability and user experience.
+Displaying project one per row is particularly helpful as it highlights the importance of considering the information architecture when designing the user interface. By taking into account what information is stored in the database, we can design an interface that maximizes usability and user experience. The searchable filters also considers users’ ease of viewing on the options they are looking for, which can make it more efficient for the users to find the information they want.
+
 
 #### Back end
 #### Demo reported to partner:
+We demonstrated the multiple searching functionalities for the  backend server through a basic UI interface.  We demonstrated 2 main functions, first is a universal search bar. After successfully retrieving the data, we demonstrated our spell checking functionality, which is similar to the auto-correct feature in Google search. Then we demonstrated how users can retrieve detailed articles by searching with specific identifiers such as ID or year. This functionality will be crucial in allowing users to easily access more detailed research pages.
+
 #### Feedback from partner:
+Daniel suggests that the database should be refreshed on a regular basis, because the database is updated regularly and  we want to keep the searching results most up-to-date.
+
+Daniel suggested to us: to avoid the possibility of duplicates, we should change our searching ID from “Name + Company name” to a unique identifier for each research.
+
+In addition, Daniel has also suggested that we should deploy our server on DCS instead of AWS, which would help transition it into the production phase once the CSC301 project ends.
+
+#### Learnings:
+There are a couple of takeaways from the partner’s review. When building the backend server in the case of a database being maintained by another team, an automation tool should be developed to synchronize the database updates. In addition, we have also realized the importance of communication; if we had talked to the MScAc team earlier, we could have saved the effort of deploying on AWS and deliver the results more efficiently.
+
+
+
