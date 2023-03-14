@@ -28,8 +28,8 @@ const About = () =>{
 
     return <>
         <div className="project-details">
-            <h1>About Us:</h1>
-            <p>The Master of Science in Applied Computing (MScAC) degree program is committed to
+            <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>About Us:</h1>
+            <p style={{fontSize: '20px', }}>The Master of Science in Applied Computing (MScAC) degree program is committed to
                 educating the next generation of world-class innovators. In a bid to sustain a culture of
                 empowerment and innovation, it is the program’s mission to develop critical human capital
                 for the knowledge economy as well as forge broader University of Toronto academic-industry partnerships.

@@ -29,20 +29,20 @@ const Map = () => {
       position='relative'
       flexDirection='column'
       alignItems='center'
-      h='100vh'
+      h='50vh'
       w='100vw'
     >
       <Box 
       position='relative' 
       // left='30%' top='20%' 
-      h='80%' w='80%'
+      h='100%' w='80%'
       >
         {/* Google Map Box */}
         
         <GoogleMap
           center={center} // Map centered at MScAC location
           zoom={15}
-          mapContainerStyle={{ width: '50%', height: '80%' }}
+          mapContainerStyle={{ width: '50%', height: '80%'}}
           options={{
             zoomControl: false,
             streetViewControl: false,

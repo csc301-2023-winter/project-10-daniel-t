@@ -34,7 +34,6 @@ const Contact = () => {
         <div className="map">
             <Map></Map>
         </div>
-
         <div id="contact-info">
             <div id="office">
                 <h4>Office Location: </h4>
