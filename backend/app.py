@@ -2,7 +2,7 @@
 # Author: Peng Du, Fucheng Zhuang
 
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect
 from search_logic.search_results import *
 from retrieve_logic.Retrieve_methods import *
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -24,6 +24,10 @@ scheduler.add_job(func=run_script, trigger='interval', hours=5)
 scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
+
+@app.route("/abstracts", methods=["GET"])
+def redirect_external():
+    return redirect("http://localhost:3000")
 
 @app.route('/abstracts/Retrieve/partner/', methods=['GET'])
 def retrieve_all_partner():
