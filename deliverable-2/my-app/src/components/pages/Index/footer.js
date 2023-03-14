@@ -1,7 +1,6 @@
 import React from 'react';
 import './footer.css';
 import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Logo from './img.png';
 function Footer() {
   return (

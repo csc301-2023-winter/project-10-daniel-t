@@ -42,6 +42,7 @@ const ProjectDetail = () =>{
             <p>{detail[1]}</p>
             <p>{detail[2]}</p>
             <p>{detail[3]}</p>
+            <p>{detail[4]}</p>
             <img src={detail[4]} alt="Logo" style={{width:"20%"}}/>
             <p>{detail[5]}</p>
             <p>{detail[6]}</p>
