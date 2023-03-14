@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
 import Helmet from "react-helmet"
 import './index.css'
+import Footer from './footer';
 import contact from "../contact";
 
 const Years = ({years}) =>{
@@ -234,12 +235,8 @@ const Index = () => {
                 </div>
             </div>
 
-
-
-
-
-
         </div>
+        <Footer/>
     </>
 }
 export default Index;
