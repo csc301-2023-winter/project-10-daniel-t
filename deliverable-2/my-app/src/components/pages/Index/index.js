@@ -101,8 +101,13 @@ const Index = () => {
                 lis[i] = "all"
             }
         }
+        // If the search bar is empty, and all the filters are not chosen, don't do anything.
+        if (input.length === 0 && lis.every(elem => elem === "all")) {
+            return <>
+                <p id="empty" className="alert">Please type in a search term.</p>
+            </>
+        }
         return navigate("/"+ input +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
-
     }
 
     function handle(e){
@@ -200,7 +205,6 @@ const Index = () => {
             <input type="text" id="searchbar" name="searchbar" placeholder="Enter a search term" value={search}
                    onChange={searchChange} onKeyPress={handle} className="search-term"/>
                 <button onClick={goSearch} className="search-button">Search</button>
-                <p id="empty" className="alert">Please type in a search term.</p>
         </div>
 
 
