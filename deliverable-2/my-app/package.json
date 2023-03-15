@@ -1,10 +1,9 @@
 {
-  "homepage": "http://csc301-2023-winter.github.io/project-10-daniel-t",
+  "homepage": ".",
   "name": "deliverable-2",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3000",
-  "homepage": ".",
   "dependencies": {
     "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.6",
@@ -53,6 +52,7 @@
   "devDependencies": {
     "@iconify/icons-mdi": "^1.2.44",
     "@iconify/react": "^4.1.0",
+    "gh-pages": "^5.0.0",
     "react-scripts": "^5.0.1"
   }
 }
