@@ -15,7 +15,7 @@ Our application is a web interface that allows easy browsing, filtering, and sea
 
 
 ## Setup
-Go to the webpage by clicking the following URL: 
+Go to the webpage by clicking the following URL: https://mscacresearch.netlify.app/
 
 ## Features 
 ### 1.	Home page interface: 
