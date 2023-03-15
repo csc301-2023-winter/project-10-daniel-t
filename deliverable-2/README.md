@@ -6,6 +6,7 @@
 * [Setup](*setup)
 * [Features](#features)
 * [Workflow](#workflow)
+* [Deployment](#deployment)
 * [Licences](#licenses)
 
 
@@ -69,17 +70,16 @@ Beneath the search box, you will find a list of tags that are currently trending
 Figure 5. Tags that would show blue when the cursor is moved onto it.
 
 ## Workflow
- 
-
 To get started working on the team repository, use Git to clone it onto your local machine. If you encounter issues during the cloning process due to authentication or private repository access problems, you can either use a personal access token or cache GitHub credentials by logging into Git through the terminal once. This will allow Git to cache your account information and grant access to the private repo. After cloning, set the origin using git remote -v. The frontend and backend teams should work separately, and each team should include a README file that contains instructions for use. To ensure that you're working with the latest code, run git pull on your local machine each time before editing the code. Once you've made changes to the code, use git add to add the modified files. Then, use git commit with an informative message to commit the changes. Finally, push the changes to the main branch using git push.
 
+ 
+## Deployment
+After discussing with our partner Daniel, we have deployed the front&backend servers on UofT DCS virtual machine. 
+
+At the current stage, our backend flask server is running as a background process on the virtual machine 24-7. The web requests sent to http://vm008.teach.cs.toronto.edu/abstracts are reversed-proxied to our flask server and handled accordingly. Note that it is still a development server and not yet in production state, so high-volume traffic is not expected. In later stages of development, we will convert it into a production server using WSGI tools, such as Gunicorn.
+
+The frontend server is currently deployed on netlify, as we encountered permission and app-building issues on DCS. The frontend server can be accsessed through   
+https://mscacresearch.netlify.app/. Note that the frontend is already connected with backend, and the searching/filtering functionalities are already up and running. We will continue to work with DCS staffs and figure out a way to deploy frontend on DCS as soon as possible.
 
 ## Licenses 
 The license we are using for this project is the MIT License. The reason for selecting the MIT license for our project is that it is focused on social welfare and operates on a non-profit basis. During our conversations with our partner, we discussed confidentiality, and they conveyed their wish for people to be able to update the project to enhance its societal contribution. The MIT license permits individuals to replicate and alter our codebase, aligning with our partner's objectives.
- 
-Deployment
-
-After discussing with our partner Daniel, we have deployed the front&backend servers on UofT DCS virtual machine. 
-At the current stage, our backend flask server is running as a background process on the virtual machine 24-7. The web requests sent to http://vm008.teach.cs.toronto.edu/abstracts are reversed-proxied to our flask server and handled accordingly. Note that it is still a development server and not yet in production state, so high-volume traffic is not expected. In later stages of development, we will convert it into a production server using WSGI tools, such as Gunicorn.
-The frontend server is currently deployed on netlify, as we encountered permission and app-building issues on DCS. The frontend server can be accsessed through   
-https://mscacresearch.netlify.app/. Note that the frontend is already connected with backend, and the searching/filtering functionalities are already up and running. We will continue to work with DCS staffs and figure out a way to deploy frontend on DCS as soon as possible.
