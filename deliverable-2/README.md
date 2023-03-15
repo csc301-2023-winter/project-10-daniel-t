@@ -70,22 +70,11 @@ Figure 5. Tags that would show blue when the cursor is moved onto it.
 
 ## Workflow
  
-__**git clone**__ team repository to local
-* If clone failed due to authentication, or the repo is private and prevents editing access for teammates, either use a personal access token, or caching GitHub credentials by log into Git through terminal once to allow Git cache account information and permit access to the private repo.
 
-__**git remote -v**__ to set the origin
-
-Frontend and backend work separately and include README file which includes instruction for use.
-
-In local, __**git pull**__ each time before editing the code to fetch the latest data.
-
-After coding is completed, __**git add**__ to add the modified files.
-
-__**git commit**__ with informative message.
-
-__**git push**__ to main branch.
+To get started working on the team repository, use Git to clone it onto your local machine. If you encounter issues during the cloning process due to authentication or private repository access problems, you can either use a personal access token or cache GitHub credentials by logging into Git through the terminal once. This will allow Git to cache your account information and grant access to the private repo. After cloning, set the origin using git remote -v. The frontend and backend teams should work separately, and each team should include a README file that contains instructions for use. To ensure that you're working with the latest code, run git pull on your local machine each time before editing the code. Once you've made changes to the code, use git add to add the modified files. Then, use git commit with an informative message to commit the changes. Finally, push the changes to the main branch using git push.
 
 
 ## Licenses 
 The license we are using for this project is the MIT License. The reason for selecting the MIT license for our project is that it is focused on social welfare and operates on a non-profit basis. During our conversations with our partner, we discussed confidentiality, and they conveyed their wish for people to be able to update the project to enhance its societal contribution. The MIT license permits individuals to replicate and alter our codebase, aligning with our partner's objectives.
+ 
 
