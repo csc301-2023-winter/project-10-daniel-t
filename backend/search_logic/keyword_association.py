@@ -75,11 +75,11 @@ def related_keywords(word: str) -> list[str]:
             split = w.split(',')
             for s in split:
                 h = calculate_heuristic(word, s.strip())
-                if h > 0.7:
+                if h > 0.7 or word.lower() in w.lower():
                     result_with_heuristic.append((s.strip(), h))
         else:
             h = calculate_heuristic(word, w)
-            if h > 0.7:
+            if h > 0.7 or word.lower() in w.lower():
                 result_with_heuristic.append((w, h))
     result_with_heuristic = list(set(result_with_heuristic))  # Remove duplicates
     if len(result_with_heuristic) == 0:
@@ -88,5 +88,5 @@ def related_keywords(word: str) -> list[str]:
         if corrected != word:
             return related_keywords(corrected)
     result_with_heuristic.sort(key=lambda x: x[1], reverse=True)
-    return [p[0] for p in result_with_heuristic][:10]
+    return [p[0] for p in result_with_heuristic]
 
