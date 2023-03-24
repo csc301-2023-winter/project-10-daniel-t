@@ -40,13 +40,17 @@ const Index = () => {
     const [years, setYears] = useState([]);
     const [partners, setPartners] = useState([]);
     const [supervisors, setSupervisors] = useState([]);
-    const {refresh, setRefresh} = useContext(APIContext)
+    const {refresh, setRefresh} = useContext(APIContext);
+
+    const [searchYear, setSearchYears] = useState('');
+    const [searchPartner, setSearchPartners] = useState('');
+    const [searchSupervisor, setSearchSupervisors] = useState('');
 
 
 
     let updateFilterBox = (event) => {
         let filterId = event.target.id
-        // console.log(event.target)
+        console.log(event.target.id)
         let filterDropdown = document.getElementById(filterId.slice(0, -7));
         let filterButton = document.getElementById(filterId);
 
@@ -54,9 +58,13 @@ const Index = () => {
         // toggle between hiding and showing the dropdown content
         filterDropdown.classList.toggle("show");
 
+
         // If there are results shown, replace the text in the button as the selected option
         if (filterDropdown.classList.contains("show")) {
+            // Obtain all the options that match the search term
             let filterLinks = filterDropdown.querySelectorAll("a");
+
+            // Let the selected option replace the text in the button, and hide the dropdown
             for (let i = 0; i < filterLinks.length; i++) {
                 filterLinks[i].addEventListener("click", function() {
                     filterButton.textContent = this.textContent;
@@ -68,7 +76,7 @@ const Index = () => {
     }
 
     window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
+        if (!event.target.matches('.dropbtn') && !event.target.matches('.search-container')) {
             let dropdowns = document.getElementsByClassName("dropdown-content");
             let i;
             for (i = 0; i < dropdowns.length; i++) {
@@ -87,7 +95,6 @@ const Index = () => {
             setSearch(event.target.innerText)
         }
         return null
-
     }
 
     let goSearch =(event)=>{
@@ -154,9 +161,6 @@ const Index = () => {
     // console.log(years)
 
 
-
-
-
     return <>
         <Helmet >
             <title>MScAC</title>
@@ -173,8 +177,28 @@ const Index = () => {
                     Internship Year
                 </div>
                 <button id="year-button" onClick={updateFilterBox}  className="dropbtn"> Choose year </button>
-                <div id="year" className="dropdown-content">
-                <Years years={years}/>
+                <div id="year" className="dropdown-content"> 
+                    <input
+                        className="search-container"
+                        type="text"
+                        placeholder="Search year"
+                        onChange={e => setSearchYears(e.target.value)}
+                    />
+                    <a>None</a>
+                    {/* <Years years={years}/> */}
+                    {years.filter((val) => {
+                        if (searchYear === "") {
+                            return val;
+                        }
+                        else if (val.includes(searchYear)) {
+                            return val;
+                        }
+                    }).map((year, index)=> (
+                        <>
+                        <a key={index+1}>{year}</a>
+                        </>
+                    ))
+                    }
                 </div>
             </div>
 
@@ -184,8 +208,28 @@ const Index = () => {
                 </div>
                 <button id="project-button" onClick={updateFilterBox} className="dropbtn"> Choose organization </button>
                 <div id="project" className="dropdown-content">
-                <Partners partners={partners}/>
-                </div>
+                <input
+                className="search-container"
+                type="text"
+                placeholder="Search organization"
+                onChange={e => setSearchPartners(e.target.value)}
+                />
+                {/* <Partners partners={partners}/> */}
+                <a>None</a>
+                {partners.filter((val) => {
+                    if (searchPartner === "") {
+                        return val;
+                    }
+                    else if (val.toLocaleLowerCase().includes(searchPartner.toLowerCase)) {
+                        return val;
+                    }
+                }).map((partner, index)=> (
+                    <>
+                    <a key={index+1}>{partner}</a>
+                    </>
+                ))
+                }
+            </div>
             </div>
 
             <div id="supervisor-filter" className="dropdown">
@@ -194,9 +238,29 @@ const Index = () => {
                 </div>
                 <button id="supervisor-button" onClick={updateFilterBox} className="dropbtn"> Choose supervisor </button>
                 <div id="supervisor" className="dropdown-content">
-                <Supervisors supervisors={supervisors}/>
-                </div>
-            </div>
+                <input
+                className="search-container"
+                type="text"
+                placeholder="Search supervisor"
+                onChange={e => setSearchSupervisors(e.target.value)}
+                />
+                {/* <Supervisors supervisors={supervisors}/> */}
+                <a>None</a>
+                {supervisors.filter((val) => {
+                    if (searchSupervisor === "") {
+                        return val;
+                    }
+                    else if (val.toLowerCase().includes(searchSupervisor.toLocaleLowerCase())) {
+                        return val;
+                    }
+                }).map((supervisor, index)=> (
+                    <>
+                    <a key={index+1}>{supervisor}</a>
+                    </>
+                ))
+                }
+        </div>
+        </div>
         </div>
 
 
