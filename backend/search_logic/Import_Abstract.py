@@ -3,7 +3,8 @@
 
 import requests
 import json
-
+import os
+import urllib.request
 # ---------Send GET request to populate the data from airtable API.---------
 url = "https://api.airtable.com/v0/appp7vLC4kTum3DEP/Public abstracts"
 payload = {}
@@ -16,6 +17,10 @@ headers = {
 }
 response = requests.request("GET", url, headers=headers, data=payload)
 parsed_dict = response.json()
+root_dir = os.path.abspath(os.path.dirname(__file__))
+image_dir = os.path.join(root_dir, 'partner_logos')
+if not os.path.exists(image_dir):
+    os.makedirs(image_dir)
 # ---------Store each piece of data in  parallel lists.---------
 ids = [record['id'].strip().strip("\u202a") for record in parsed_dict['records']]
 # Note: The record_ids are not used.
@@ -43,6 +48,29 @@ for pair in academic_supervisors:
     for sup in pair.split(','):
         supervisors.add(sup.strip().strip("\u202a"))
 supervisors = list(supervisors)
+# merge the records for when the title, partner, year, and supervisors are all the same
+to_be_deleted = set()
+for i in range(len(ids)):
+    if i in to_be_deleted:
+        continue
+    for j in range(i + 1, len(ids)):
+        if j in to_be_deleted:
+            continue
+        if i != j and students[i] != students[j] and titles[i] == titles[j] and \
+            partners[i] == partners[j] and \
+                cohorts[i] == cohorts[j] and \
+                academic_supervisors[i] == academic_supervisors[j] and \
+                partner_supervisors[i] == partner_supervisors[j] and \
+                public_abstracts[i] == public_abstracts[j]:
+            students[i] += students[j]
+            to_be_deleted.add(j)
+
+# delete all the records that have been merged already, so that the parallel list is still aligned
+for lsts in [ids, record_ids, partner_logos, titles, cohorts, students, partners, partner_supervisors,
+             academic_supervisors, public_abstracts]:
+    for ind in to_be_deleted:
+        lsts.pop(ind)
+
 # Construct a hash mapping from ids to title, cohort, student, partner, partner's logo, partner supervisors,
 # academic supervisors and public abstracts.
 id_mapping = {}
@@ -68,6 +96,12 @@ for i in range(len(ids)):
         partner_mapping[partners[i]].append(ids[i])
     # construct the id mapping.
     if partner_logos[i]:
+        # cache the logo
+        image_url = partner_logos[i][0]['url']
+        image_filename = os.path.basename(image_url) + '.JPEG'
+        image_path = os.path.join(image_dir, image_filename)
+        if not os.path.exists(image_path):
+            urllib.request.urlretrieve(image_url, image_path)
         id_mapping[ids[i]] = (titles[i], cohorts[i], students[i], partners[i], partner_logos[i][0]['url'],
                               partner_supervisors[i], academic_supervisors[i], public_abstracts[i])
     else:
