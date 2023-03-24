@@ -8,12 +8,12 @@ from search_logic.Import_Abstract import *
 def search_result(text: str) -> list:
     """Return a list of IDs of all the records corresponding to the text."""
     result = []
+    related = related_keywords(text)
     for a in range(len(ids)):
         title, student, partner, academic_supervisor, partner_supervisor = titles[a], students[a], \
                                                                            partners[a], \
                                                                            academic_supervisors[a], \
                                                                            partner_supervisors[a]
-        related = related_keywords(text)
         for word in related:
             if word in title or word in student or word in partner or \
                     word in academic_supervisor or word in partner_supervisor:
