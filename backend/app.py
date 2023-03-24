@@ -13,6 +13,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+
 def run_script():
     """Run the Import_Abstract.py script periodically to update."""
     subprocess.call(['python', './search_logic/Import_Abstract.py'])
@@ -64,6 +65,17 @@ def search_results():
         final_result.append(tuple(to_append))
 
     return jsonify(final_result)
+
+
+@app.route('/abstracts/Retrieve/2022', methods=['GET'])
+def retrieve_2022():
+    result = search_by_year('2021–22')
+    final_result = []
+    for ids in result:
+        to_append = list(retrieve_id(ids))
+        to_append.append(ids)
+        final_result.append(tuple(to_append))
+    return final_result[:3]
 
 
 # APIs for retrieving results
