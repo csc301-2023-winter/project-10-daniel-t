@@ -55,3 +55,4 @@ def search_by_four_factors(text=None, year=None, partner=None, supervisor=None) 
         supervisor_result = search_by_acasup(supervisor)
         result = supervisor_result if not result else set(result).intersection(supervisor_result)
     return list(result)
+
