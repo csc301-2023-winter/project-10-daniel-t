@@ -6,32 +6,32 @@ import './index.css'
 import Footer from './footer';
 import contact from "../contact";
 
-const Years = ({years}) =>{
-    return<>
-        <a>None</a>
-        {years.map((year, index)=> (
-            <a key={index+1}>{year}</a>
-        ))}
-    </>
-}
+// const Years = ({years}) =>{
+//     return<>
+//         <a>None</a>
+//         {years.map((year, index)=> (
+//             <a key={index+1}>{year}</a>
+//         ))}
+//     </>
+// }
 
-const Partners = ({partners}) =>{
-    return<>
-        <a>None</a>
-        {partners.map((partner, index)=> (
-            <a key={index+1}>{partner}</a>
-        ))}
-    </>
-}
+// const Partners = ({partners}) =>{
+//     return<>
+//         <a>None</a>
+//         {partners.map((partner, index)=> (
+//             <a key={index+1}>{partner}</a>
+//         ))}
+//     </>
+// }
 
-const Supervisors = ({supervisors}) =>{
-    return<>
-        <a>None</a>
-        {supervisors.map((supervisor, index)=> (
-            <a key={index+1}>{supervisor}</a>
-        ))}
-    </>
-}
+// const Supervisors = ({supervisors}) =>{
+//     return<>
+//         <a>None</a>
+//         {supervisors.map((supervisor, index)=> (
+//             <a key={index+1}>{supervisor}</a>
+//         ))}
+//     </>
+// }
 
 
 const HomeProjects = ({projectsDetail}) => {

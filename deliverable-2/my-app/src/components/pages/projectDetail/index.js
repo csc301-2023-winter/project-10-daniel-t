@@ -1,4 +1,4 @@
-import {Outlet, useNavigate, useParams} from "react-router-dom";
+import {Outlet, useNavigate, useParams, Link} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
 import Helmet from "react-helmet"
@@ -42,8 +42,9 @@ const ProjectDetail = () =>{
             <p>{detail[1]}</p>
             <p>{detail[2]}</p>
             <p>{detail[3]}</p>
-            <p>{detail[4]}</p>
+            <a href={detail[4]}>
             <img src={detail[4]} alt="Logo" style={{width:"20%"}}/>
+            </a>
             <p>{detail[5]}</p>
             <p>{detail[6]}</p>
             <p>{detail[7]}</p>
