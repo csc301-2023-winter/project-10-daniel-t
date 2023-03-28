@@ -4,6 +4,7 @@
 ## Table of Content
 * [Description](#description)
 * [General Info](#general-info)
+* [Development Requirement](#development-requirement)
 * [Links to assignments](#links-to-assignments)
 * [How to use](*how-to-use)
 * [Features](#features)
