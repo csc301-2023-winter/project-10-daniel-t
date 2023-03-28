@@ -57,10 +57,10 @@ const HomeProjects = ({projectsDetail}) => {
         {projectsDetail.map((project, index) =>(
             <div id="project 3" className="projects" key={index} >
                 <b className="project-name-style"> {project[0]} </b><br/>
-                <span className="link-style project_owner"> {project[3]} </span><br/>
-                <span className="link-style project_supervisor">{project[2]}</span><br/>
-                <span className="link-style project_year">{project[1]}</span><br/>
-                <button name={project[8]} onClick={goDetail}>Details</button>
+                <span > {project[3]} </span><br/>
+                <span >{project[2]}</span><br/>
+                <span >{project[1]}</span><br/>
+                <button name={project[8]} onClick={goDetail} >Details</button>
             </div>
             ))}
     </>

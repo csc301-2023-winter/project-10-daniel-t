@@ -38,15 +38,25 @@ const ProjectDetail = () =>{
             {/*<h2>Organization</h2>*/}
             {/*<p>Supervisor: Supervisor Name</p>*/}
             {/*<p>Abstraction: This is a project that investigates...</p>*/}
+
+            <h1>Project Name</h1>
             <p>{detail[0]}</p>
             <p>{detail[1]}</p>
+
+            <h2>Student(s):</h2>
             <p>{detail[2]}</p>
+
+            <h2>Organization</h2>
             <p>{detail[3]}</p>
             <a href={detail[4]}>
             <img src={detail[4]} alt="Logo" style={{width:"20%"}}/>
             </a>
+
+            <h2>Supervisor(s):</h2>
             <p>{detail[5]}</p>
             <p>{detail[6]}</p>
+
+            <h2>Abstract:</h2>
             <p>{detail[7]}</p>
         </div>
     </>
