@@ -151,6 +151,11 @@ const Index = () => {
                 <p id="empty" className="alert">Please type in a search term.</p>
             </>
         }
+        // if there is one filter selected and not search term, it should return the result, 
+        // but the url for nevigate() should be modified, otherwise it will result in url be like this: "//year/partner/supervisor"
+        if (input.length === 0 && !lis.every(elem => elem === "all")){
+            return navigate("/"+ " " +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
+        }
         return navigate("/"+ input +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
     }
 
