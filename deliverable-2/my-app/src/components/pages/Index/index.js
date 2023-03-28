@@ -163,7 +163,7 @@ const Index = () => {
 
 
     let searchUrl = "https://vm008.teach.cs.toronto.edu/abstracts/Search/results/?text"+ "=" +"&year"+ "=2021–22"
-        +"&partner"+ "=" +"&supervisor" + "="
+        +"&partner"+ "=" +"&supervisor" + "=" + "&limit=3"
 
 
 
@@ -206,9 +206,11 @@ const Index = () => {
             fetch(searchUrl, requestOption)
                 .then(response => {
                     return response.json()})
-                .then(jason => {setProjects(jason)
-                    console.log(jason)
-                })
+                .then(data => {
+                    const limitedData = data.slice(0, 3); // only keep the first three records
+                    setProjects(limitedData);
+                    console.log(limitedData)
+                  })
 
     }, [setRefresh, refresh])
 
