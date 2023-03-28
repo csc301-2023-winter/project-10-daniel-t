@@ -16,7 +16,7 @@ CORS(app)
 
 def run_script():
     """Run the Import_Abstract.py script periodically to update."""
-    subprocess.call(['python', './search_logic/Import_Abstract.py'])
+    subprocess.call(['python3', './search_logic/Import_Abstract.py'])
 
 
 # Use a scheduler to run the Import_Abstract.py script every 5 hours

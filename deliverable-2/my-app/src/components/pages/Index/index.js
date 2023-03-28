@@ -1,4 +1,4 @@
-import {Outlet, useNavigate} from "react-router-dom";
+import {Outlet, useNavigate, useParams} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
 import Helmet from "react-helmet"
@@ -34,6 +34,41 @@ const Supervisors = ({supervisors}) =>{
 }
 
 
+const HomeProjects = ({projectsDetail}) => {
+    let navigate = useNavigate()
+    // console.log(projectsDetail, 123)
+    if (projectsDetail === null){
+        return <h1>Please Wait</h1>
+    }
+
+    if (! projectsDetail.length){
+        return <h1>No Result Found</h1>
+    }
+    let goDetail = (event) =>{
+
+        // let element = event.target
+        // if (! element.key){
+        //     element = element.parentElement
+        // }
+        // console.log(event.target, 1)
+        return navigate("/project/" + event.target.name + "/detail/" )
+    }
+    return <>
+        {projectsDetail.map((project, index) =>(
+            <div id="project 3" className="projects" key={index} >
+                <b className="project-name-style"> {project[0]} </b><br/>
+                <span className="link-style project_owner"> {project[3]} </span><br/>
+                <span className="link-style project_supervisor">{project[2]}</span><br/>
+                <span className="link-style project_year">{project[1]}</span><br/>
+                <button name={project[8]} onClick={goDetail}>Details</button>
+            </div>
+            ))}
+    </>
+}
+
+
+
+
 const Index = () => {
     let navigate = useNavigate();
     const [search, setSearch] = useState('');
@@ -45,6 +80,8 @@ const Index = () => {
     const [searchYear, setSearchYears] = useState('');
     const [searchPartner, setSearchPartners] = useState('');
     const [searchSupervisor, setSearchSupervisors] = useState('');
+
+    const [projects, setProjects] = useState(null);
 
 
 
@@ -109,10 +146,15 @@ const Index = () => {
             }
         }
         // If the search bar is empty, and all the filters are not chosen, don't do anything.
-        if (input.length === 0 && lis.every(elem => elem === "all")) {
+        if (input.trim().length === 0 && lis.every(elem => elem === "all")) {
             return <>
                 <p id="empty" className="alert">Please type in a search term.</p>
             </>
+        }
+        // if there is one filter selected and not search term, it should return the result, 
+        // but the url for nevigate() should be modified, otherwise it will result in url be like this: "//year/partner/supervisor"
+        if (input.trim().length === 0 && !lis.every(elem => elem === "all")){
+            return navigate("/"+ " " +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
         }
         return navigate("/"+ input +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
     }
@@ -124,8 +166,16 @@ const Index = () => {
         return false;
     }
 
+
+    let searchUrl = "https://vm008.teach.cs.toronto.edu/abstracts/Search/results/?text"+ "=" +"&year"+ "=2021–22"
+        +"&partner"+ "=" +"&supervisor" + "=" + "&limit=3"
+
+
+
+
     useEffect(() => {
         let home = document.getElementById("home")
+
         if (home.style.color !== "white"){
             let about = document.getElementById("about")
             let contact = document.getElementById("contact")
@@ -155,6 +205,17 @@ const Index = () => {
             .then(response => response.json())
             .then(jason => {setSupervisors(jason)})
             .catch()
+
+
+    
+            fetch(searchUrl, requestOption)
+                .then(response => {
+                    return response.json()})
+                .then(data => {
+                    const limitedData = data.slice(0, 3); // only keep the first three records
+                    setProjects(limitedData);
+                    console.log(limitedData)
+                  })
 
     }, [setRefresh, refresh])
 
@@ -220,7 +281,7 @@ const Index = () => {
                     if (searchPartner === "") {
                         return val;
                     }
-                    else if (val.toLocaleLowerCase().includes(searchPartner.toLowerCase)) {
+                    else if (val.toLocaleLowerCase().includes(searchPartner.toLowerCase())) {
                         return val;
                     }
                 }).map((partner, index)=> (
@@ -282,27 +343,7 @@ const Index = () => {
 
         <div id = "results" className="results">
             <label id="recent-project">2022 Applied Research Internship Projects</label>
-
-            <div id="projects" >
-                <div id="project 1" className="projects">
-                    <a href="" className="project-name-style"> Project 1 </a><br/>
-                    <a href="#organization1" className="link-style"> Organization 1 </a><br/>
-                    <a href="#supervisor1" className="link-style">Supervisor 1</a><br/>
-                </div>
-
-                <div id="project 2" className="projects">
-                    <a href="projectpage.html" className="project-name-style"> Project 2 </a><br/>
-                    <a href="#organization2" className="link-style"> Organization 2 </a><br/>
-                    <a href="#supervisor2" className="link-style">Supervisor 2</a><br/>
-                </div>
-
-                <div id="project 3" className="projects">
-                    <a href="" className="project-name-style"> Project 3 </a><br/>
-                    <a href="" className="link-style"> Organization 3 </a><br/>
-                    <a href="" className="link-style">Supervisor 3</a><br/>
-                </div>
-            </div>
-
+            <HomeProjects projectsDetail={projects}/>
         </div>
         <Footer/>
     </>
