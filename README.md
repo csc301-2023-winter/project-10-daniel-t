@@ -20,6 +20,25 @@ Our application is a web interface that allows easy browsing, filtering, and sea
 
 ## Development Requirement
 
+``` sh
+Node.js
+``` 
+- Node.js is a back-end JavaScript runtime environment which executes JavaScript code outside a web browser. This will enable us to run our API and back-end 
+services.
+
+``` sh
+npm
+``` 
+- npm is the default package manager for the JavaScript runtime environment Node.js.
+``` sh
+Git
+```
+- Git and Github will be used for repo version control.
+
+``` sh
+Editor
+```
+- VS Code or Webstorm is recommended
 
 ## Links to assignments
 * [Deliverable 1](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/deliverable-1)
