@@ -6,32 +6,32 @@ import './index.css'
 import Footer from './footer';
 import contact from "../contact";
 
-const Years = ({years}) =>{
-    return<>
-        <a>None</a>
-        {years.map((year, index)=> (
-            <a key={index+1}>{year}</a>
-        ))}
-    </>
-}
+// const Years = ({years}) =>{
+//     return<>
+//         <a>None</a>
+//         {years.map((year, index)=> (
+//             <a key={index+1}>{year}</a>
+//         ))}
+//     </>
+// }
 
-const Partners = ({partners}) =>{
-    return<>
-        <a>None</a>
-        {partners.map((partner, index)=> (
-            <a key={index+1}>{partner}</a>
-        ))}
-    </>
-}
+// const Partners = ({partners}) =>{
+//     return<>
+//         <a>None</a>
+//         {partners.map((partner, index)=> (
+//             <a key={index+1}>{partner}</a>
+//         ))}
+//     </>
+// }
 
-const Supervisors = ({supervisors}) =>{
-    return<>
-        <a>None</a>
-        {supervisors.map((supervisor, index)=> (
-            <a key={index+1}>{supervisor}</a>
-        ))}
-    </>
-}
+// const Supervisors = ({supervisors}) =>{
+//     return<>
+//         <a>None</a>
+//         {supervisors.map((supervisor, index)=> (
+//             <a key={index+1}>{supervisor}</a>
+//         ))}
+//     </>
+// }
 
 
 const HomeProjects = ({projectsDetail}) => {
@@ -57,10 +57,10 @@ const HomeProjects = ({projectsDetail}) => {
         {projectsDetail.map((project, index) =>(
             <div id="project 3" className="projects" key={index} >
                 <b className="project-name-style"> {project[0]} </b><br/>
-                <span className="link-style project_owner"> {project[3]} </span><br/>
-                <span className="link-style project_supervisor">{project[2]}</span><br/>
-                <span className="link-style project_year">{project[1]}</span><br/>
-                <button name={project[8]} onClick={goDetail}>Details</button>
+                <span > {project[3]} </span><br/>
+                <span >{project[2]}</span><br/>
+                <span >{project[1]}</span><br/>
+                <button name={project[8]} onClick={goDetail} >Details</button>
             </div>
             ))}
     </>
