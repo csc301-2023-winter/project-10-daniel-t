@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
 import Helmet from "react-helmet"
 import './index.css'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const {refresh, setRefresh} = useContext(APIContext)
@@ -22,9 +23,10 @@ const Navbar = () => {
 
     return <>
         <div className="topnav">
-            <a className="active" href="" onClick={goHome} id="home">Home</a>
-            <a href="" onClick={goContact} id="contact">Contact</a>
-            <a href="" onClick={goAbout} id="about">About</a>
+            {/*<a className="active" href="" onClick={goHome} id="home">Home</a>*/}
+            <Link to="/" className="active" id="home">Home</Link>
+            <Link to="/contact/"   id="contact">Contact</Link>
+            <Link to="/about/"  id="about">About</Link>
         </div>
         <Outlet />
     </>
