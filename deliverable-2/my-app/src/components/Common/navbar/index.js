@@ -24,9 +24,9 @@ const Navbar = () => {
     return <>
         <div className="topnav">
             {/*<a className="active" href="" onClick={goHome} id="home">Home</a>*/}
-            <Link to="/" className="active" id="home">Home</Link>
-            <Link to="/contact/"   id="contact">Contact</Link>
-            <Link to="/about/"  id="about">About</Link>
+            <Link to="/search" className="active" id="home">Home</Link>
+            <Link to="contact/"   id="contact">Contact</Link>
+            <Link to="about/"  id="about">About</Link>
         </div>
         <Outlet />
     </>

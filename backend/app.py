@@ -9,7 +9,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
 import subprocess
 from flask_cors import CORS
-
+import importlib
 app = Flask(__name__)
 CORS(app)
 
@@ -17,11 +17,12 @@ CORS(app)
 def run_script():
     """Run the Import_Abstract.py script periodically to update."""
     subprocess.call(['python3', './search_logic/Import_Abstract.py'])
+    importlib.reload(search_logic.search_results)
+    importlib.reload(retrieve_logic.Retrieve_methods)
 
-
-# Use a scheduler to run the Import_Abstract.py script every 5 hours
+# Use a scheduler to run the Import_Abstract.py script every 1 hours
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=run_script, trigger='interval', hours=5)
+scheduler.add_job(func=run_script, trigger='interval', hours=1)
 scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 

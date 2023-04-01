@@ -22,7 +22,7 @@ const Projects = ({projectsDetail}) => {
         //     element = element.parentElement
         // }
         // console.log(event.target, 1)
-        return navigate("/project/" + event.target.name + "/detail/" )
+        return navigate("/search/project/" + event.target.name + "/detail/" )
     }
     return <>
         <h1>{projectsDetail.length} Result Found</h1>
