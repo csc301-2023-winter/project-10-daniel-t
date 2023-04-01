@@ -48,9 +48,8 @@ const ProjectDetail = () =>{
 
             <h2>Organization</h2>
             <p>{detail[3]}</p>
-            <a href={detail[4]}>
-            <img src={detail[4]} alt="Logo" style={{width:"20%"}}/>
-            </a>
+            <img src={`https://vm008.teach.cs.toronto.edu/abstracts/Search/picture/${detail[3]}`} alt="No Logo Available" style={{ width: '20%' }} />
+
 
             <h2>Supervisor(s):</h2>
             <p>{detail[5]}</p>
