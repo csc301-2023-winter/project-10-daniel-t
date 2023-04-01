@@ -1,8 +1,8 @@
 # This file is part of the project backend code for CSC301 MScAC.
 # Author: Peng Du, Fucheng Zhuang
+import os
 
-
-from flask import Flask, jsonify, request, render_template, redirect
+from flask import Flask, jsonify, request, render_template, redirect, send_file
 from search_logic.search_results import *
 from retrieve_logic.Retrieve_methods import *
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -20,9 +20,9 @@ def run_script():
     importlib.reload(search_logic.search_results)
     importlib.reload(retrieve_logic.Retrieve_methods)
 
-# Use a scheduler to run the Import_Abstract.py script every 1 hours
+# Use a scheduler to run the Import_Abstract.py script every 5 hours
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=run_script, trigger='interval', hours=1)
+scheduler.add_job(func=run_script, trigger='interval', hours=5)
 scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
@@ -51,6 +51,12 @@ def retrieve_all_acasup():
 def keywords(word):
     return jsonify(related_keywords(word))
 
+@app.route('/abstracts/Search/picture/<string:partner>', methods=['GET'])
+def get_logo(partner):
+    filename = './search_logic/partner_logos/' + partner + '.jpg'
+    if not os.path.isfile(filename):
+        return None
+    return send_file(filename, mimetype='image/jpeg')
 
 @app.route('/abstracts/Search/results/', methods=['GET'])
 def search_results():

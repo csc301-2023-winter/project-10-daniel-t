@@ -98,7 +98,7 @@ for i in range(len(ids)):
     if partner_logos[i]:
         # cache the logo
         image_url = partner_logos[i][0]['url']
-        image_filename = os.path.basename(image_url) + '.JPEG'
+        image_filename = partners[i] + '.jpg'
         image_path = os.path.join(image_dir, image_filename)
         if not os.path.exists(image_path):
             urllib.request.urlretrieve(image_url, image_path)
