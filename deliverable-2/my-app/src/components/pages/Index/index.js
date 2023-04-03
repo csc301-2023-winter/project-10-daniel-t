@@ -44,13 +44,7 @@ const HomeProjects = ({projectsDetail}) => {
     if (! projectsDetail.length){
         return <h1>No Result Found</h1>
     }
-    let goDetail = (event) =>{
-
-        // let element = event.target
-        // if (! element.key){
-        //     element = element.parentElement
-        // }
-        // console.log(event.target, 1)
+    let goDetail = (event) =>{  // Go to Detailed project page when Details button is clicked.
         return navigate("/search/project/" + event.target.name + "/detail/" )
     }
     return <>
@@ -248,9 +242,11 @@ const Index = () => {
                     <a>None</a>
                     {/* <Years years={years}/> */}
                     {years.filter((val) => {
+                        // If year filter is not used, display all years options
                         if (searchYear === "") {
                             return val;
                         }
+                        // else, only display the options that satisfy the search term
                         else if (val.includes(searchYear)) {
                             return val;
                         }
@@ -278,9 +274,11 @@ const Index = () => {
                 {/* <Partners partners={partners}/> */}
                 <a>None</a>
                 {partners.filter((val) => {
+                    // If organization filter is not used, display all options
                     if (searchPartner === "") {
                         return val;
                     }
+                    // else, only display the satisfied ones. Not case sensitive.
                     else if (val.toLocaleLowerCase().includes(searchPartner.toLowerCase())) {
                         return val;
                     }
@@ -308,9 +306,11 @@ const Index = () => {
                 {/* <Supervisors supervisors={supervisors}/> */}
                 <a>None</a>
                 {supervisors.filter((val) => {
+                    // If supervisor filter is not used, display all options
                     if (searchSupervisor === "") {
                         return val;
                     }
+                    //else, only display the satisfied ones. Not case sensitive
                     else if (val.toLowerCase().includes(searchSupervisor.toLocaleLowerCase())) {
                         return val;
                     }
@@ -342,7 +342,8 @@ const Index = () => {
 
 
         <div id = "results" className="results">
-            <label id="recent-project">2022 Applied Research Internship Projects</label>
+            <label id="recent-project">2021-2022 Applied Research Internship Projects</label>
+            {/* Display the most recent projects*/}
             <HomeProjects projectsDetail={projects}/>
         </div>
         <Footer/>
