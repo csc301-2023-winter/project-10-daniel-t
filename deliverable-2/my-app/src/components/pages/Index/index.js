@@ -141,7 +141,7 @@ const Index = () => {
         let input = document.getElementById("searchbar").value
         let lis = [year, partner, supervisor]
         for (let i = 0; i < 3; i++){
-            if (lis[i] === "None" || lis[i].slice(0, 7) === "Choose "){
+            if (lis[i] === "None" || (typeof lis[i] === 'string' && lis[i].slice(0, 7) === "Choose ")){
                 lis[i] = "all"
             }
         }
@@ -154,9 +154,9 @@ const Index = () => {
         // if there is one filter selected and not search term, it should return the result, 
         // but the url for nevigate() should be modified, otherwise it will result in url be like this: "//year/partner/supervisor"
         if (input.trim().length === 0 && !lis.every(elem => elem === "all")){
-            return navigate("/search/"+ " " +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
+            return navigate("/"+ " " +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
         }
-        return navigate("/search/"+ input +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
+        return navigate("/"+ input +'/'+ lis[0] +'/' + lis[1] +'/' + lis[2] +"/result/")
     }
 
     function handle(e){
@@ -176,7 +176,7 @@ const Index = () => {
     useEffect(() => {
         let home = document.getElementById("home")
 
-        if (home.style.color !== "white"){
+        if (home && home.style.color !== "white"){
             let about = document.getElementById("about")
             let contact = document.getElementById("contact")
             home.style.color = "white"
