@@ -40,10 +40,6 @@ Editor
 ```
 - VS Code or Webstorm is recommended
 
-## Links to assignments
-* [Deliverable 1](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/deliverable-1)
-* [Deliverable 2](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/deliverable-2)
-
 
 ## Deployment
 Go to the webpage by clicking the following URL: http://vm008.teach.cs.toronto.edu/search
