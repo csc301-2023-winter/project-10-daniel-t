@@ -91,5 +91,70 @@ def retrieve_by_id(rid):
     return jsonify(retrieve_id(rid))
 
 
+def create_app():
+    app = Flask(__name__)
+    CORS(app)
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=run_script, trigger='interval', hours=5)
+    scheduler.start()
+    atexit.register(lambda: scheduler.shutdown())
+
+    @app.route('/abstracts/Retrieve/partner/', methods=['GET'])
+    def retrieve_all_partner():
+        return jsonify(retrieve_partner())
+
+    @app.route('/abstracts/Retrieve/years', methods=['GET'])
+    def retrieve_all_years():
+        return jsonify(retrieve_years())
+
+    @app.route('/abstracts/Retrieve/acasup', methods=['GET'])
+    def retrieve_all_acasup():
+        return jsonify(retrieve_acasup())
+
+    # APIs for searching results
+    @app.route('/abstracts/Search/keyword/<string:word>', methods=['GET'])
+    def keywords(word):
+        return jsonify(related_keywords(word))
+
+    @app.route('/abstracts/Search/picture/<string:partner>', methods=['GET'])
+    def get_logo(partner):
+        filename = './search_logic/partner_logos/' + partner + '.jpg'
+        if not os.path.isfile(filename):
+            return None
+        return send_file(filename, mimetype='image/jpeg')
+
+    @app.route('/abstracts/Search/results/', methods=['GET'])
+    def search_results():
+        text = request.args.get('text')
+        year = request.args.get('year')
+        partner = request.args.get('partner')
+        supervisor = request.args.get('supervisor')
+        result = search_by_four_factors(text=text, year=year, partner=partner, supervisor=supervisor)
+        final_result = []
+        for ids in result:
+            to_append = list(retrieve_id(ids))
+            to_append.append(ids)
+            final_result.append(tuple(to_append))
+
+        return jsonify(final_result)
+
+    @app.route('/abstracts/Retrieve/2022', methods=['GET'])
+    def retrieve_2022():
+        result = search_by_year('2021–22')
+        final_result = []
+        for ids in result:
+            to_append = list(retrieve_id(ids))
+            to_append.append(ids)
+            final_result.append(tuple(to_append))
+        return final_result[:3]
+
+    # APIs for retrieving results
+    @app.route('/abstracts/Retrieve/id/<string:rid>', methods=['GET'])
+    def retrieve_by_id(rid):
+        return jsonify(retrieve_id(rid))
+
+    return app
+
+
 if __name__ == "__main__":
     app.run(port=8000)
