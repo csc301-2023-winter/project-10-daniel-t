@@ -5,20 +5,28 @@
 * [Description](#description)
 * [General Info](#general-info)
 * [Development Requirement](#development-requirement)
-* [Links to assignments](#links-to-assignments)
-* [How to use](*how-to-use)
+* [Instructions](#instructions)
+* [Folders and Files](#folders-and-files)
+* [Setup](#setup)
+* [Usage](#usage)
 * [Features](#features)
 * [How are Tasks Managed](#how-are-tasks-managed)
 * [Licences](#licenses)
 
 
-## Description
+# Description
 The project is a visualization and search interface for graduate internship abstracts. It is a web interface to display, filter, and search the public abstracts of the applied research internship projects carried out by students from the MScAC program at the University of Toronto. Our partner is Daniel Giovannini, the Associate Director for MScAC Partnerships. We are planning to build an interactive, searchable website that is both desktop- and mobile-friendly.
 
-## General Info 
+# General Info 
 Our application is a web interface that allows easy browsing, filtering, and searching of public abstracts of applied research internship projects carried out by MScAC students at the University of Toronto. It aims to attract technical talent at the graduate level and promote university research collaborations. The platform is designed to meet the needs of both students and industry partners and will be interactive, searchable, and responsive on desktop and mobile devices. With guidance from the Associate Director for MScAC Partnerships, we aim to create an informative and engaging website for all stakeholders.
 
+# Instructions
 ## Development Requirement
+``` sh
+pip3
+```
+- Python is required for adding required dependencies for backend development.
+- Install from https://www.educative.io/answers/installing-pip3-in-ubuntu if not installed yet.
 
 ``` sh
 Node.js
@@ -40,8 +48,55 @@ Editor
 ```
 - VS Code or Webstorm is recommended
 
+## Folders and Files
+This section explains the purpose and content for each folder in the repository for future reference for the developers.
+* __**backend**__ - Includes the required dependencies for development, stored in __**requirement.txt**__ file.
+* __**frontend**__ - Basic UI outlined in html file. The html pages were then transfered into React component in the [deliverable-2/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/deliverable-2/my-app) directory, along with interactive functions implemented in JS.
+* __**testing**__ - Original testing cases for both frontend and backend. For the most updated backend testings, see __**app.py**__ and __**test.py**__ files in [backend](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/backend) directory
+* __**deploy.sh**__ - Script for website deployment
 
-## Deployment
+Future development mainly be working in [deliverable-2/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/deliverable-2/my-app) directory.
+
+## Setup
+Clone the project from github:
+``` sh
+git clone https://github.com/csc301-2023-winter/project-10-daniel-t.git
+```
+cd into backend directory
+``` sh
+cd project-10-daniel-t/backend
+```
+Add dependencies
+``` sh
+pip install -r requirements.txt
+```
+Then cd into my-app directory
+``` sh
+cd ../
+cd deliverable-2/my-app
+```
+
+Run npm install to load the required packages for React
+``` sh
+npm install
+```
+
+For future development, one can also run yarn to check whether the required packages are loaded. If yarn is not installed, install using the following command:
+``` sh
+npm install --global yarn
+```
+
+Check for success installation
+```sh
+yarn --version
+```
+
+Run yarn. The required packages for the application would be automatically installed.
+``` sh
+yarn
+```
+
+## Usage
 Go to the webpage by clicking the following URL: http://vm008.teach.cs.toronto.edu/search
 
 ## Features 
