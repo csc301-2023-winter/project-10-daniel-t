@@ -24,4 +24,4 @@ cd build || exit
 mkdir search
 mv * search
 npx serve &
-nohup "$0" &
+
