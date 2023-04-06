@@ -3,12 +3,24 @@
 
 }
 #logo {
-   width: 125px;
-   height: 75px;
+   width: 165px;
+   height: 100px;
 
     margin-right:58%;
 }
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+
+}
 .topnav {
+    height: 120px;
     overflow: hidden;
     background-color: #1E3866;
     display:flex;

@@ -17,3 +17,4 @@ Werkzeug==2.2.3
 apscheduler~=3.10.1
 flask_cors
 pytest~=7.2.1
+

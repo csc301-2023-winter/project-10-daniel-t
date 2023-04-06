@@ -38,9 +38,10 @@ const Navbar = () => {
 
     return <>
         <div>
+            <div className="image-container">
+                <img id="logo" src={require('./img.png')} />
+            </div>
         <div className="topnav">
-            <img id="logo" src={require('./img.png')} />
-
             <Link to="/search" className="active" id="home">Home</Link>
             {button?<Link to="contact/"   id="contact">Contact</Link>:<></>}
             {button?<Link to="about/"  id="about">About</Link>:<></>}
