@@ -74,7 +74,7 @@ pip install -r requirements.txt
 Then go to my-app(React) directory
 ``` sh
 cd ../
-cd deliverable-2/my-app
+cd frontend/my-app
 ```
 
 Run npm install to load the required packages for React
