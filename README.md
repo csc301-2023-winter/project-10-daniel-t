@@ -102,11 +102,9 @@ Run yarn. The required packages for the application would be automatically insta
 yarn
 ```
 
-## Usage
+## Deployment
 The project is deployed on: http://vm008.teach.cs.toronto.edu/search
 
-## Deployment
-Go to the webpage by clicking the following URL: http://vm008.teach.cs.toronto.edu/search
 ### Deployment Process
  <br>The deployment process has been partially automated via a deploy.sh shell script. The steps of shell scripts are explained below <br>
  <br>**1. cd backend <br>
