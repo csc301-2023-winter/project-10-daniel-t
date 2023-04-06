@@ -47,7 +47,28 @@ Editor
 
 ## Deployment
 Go to the webpage by clicking the following URL: http://vm008.teach.cs.toronto.edu/search
+### Deployment Process
+ <br>The deployment process has been partially automated via a deploy.sh shell script. The steps of shell scripts are explained below <br>
+ <br>**1. cd backend <br>
+ <br>2. pip install -r requirements.txt: Install all the required packages of backend server <br>
+ <br>3. nohup python3 app.py &: Run the flask server as a backend process <br>
+ <br>4. cd .. <br>
+ <br>5. cd frontend <br>
+ <br>6. cd my-app <br>
+ <br>7. npm install:Install all the required packages for the frontend React server <br>
+ <br>8. npm run build: Compile the React project into a production build <br>
+ <br>9. cd build <br>
+ <br>10. mkdir search: Since the deployed URL has “/search” component, due to the nature of how React projects are served, we need to create a search folder to ensure consistency. <br>
+ <br>11. mv * search: Move all the files to the newly created search folder. <br>
+ <br>12. npx serve &: Serve the build folder. <br>
+ <br>**
+Note that The current deployment only works for urls of “.../abstracts” for the backend server and “.../search” for the frontend server, assuming that backend url is reverse proxied to port 8000 and frontend url is reverse proxied to port 3000. If the url and/or the reverse proxy ports changes, the following files/settings will need to be changed accordingly: <br>
+ <br>**1. /backend/app.py: change the port number in main** <br>
+ <br>**2. /frontend/my-app/package.json: change homepage** <br>
+ <br>**3. /frontend/components/... : change the router settings and navigations**<br>
 
+<br>
+Please feel free to contact p.du@mail.utoronto.edu if facing any challenges when deploying to DCS. <br>
 ## Features 
 ### 1.	Home page interface: 
 The link below will direct the user to the home page of the website. Several internship projects would show up at the bottom of the page. If the user is interested in one of the projects and clicks on the Details button, the user would be directed to the project page, which includes more specific details such as the project abstract, organization, and supervisor. 
