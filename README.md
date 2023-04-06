@@ -55,7 +55,7 @@ This section explains the purpose and content for each folder in the repository 
 * __**testing**__ - Original testing cases for both frontend and backend. For the most updated backend testings, see __**app.py**__ and __**test.py**__ files in [backend](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/backend) directory
 * __**deploy.sh**__ - Script for website deployment
 
-Future development mainly be working in [deliverable-2/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory.
+Future development mainly be working in [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory.
 
 ## Setup
 Clone the project from github:
