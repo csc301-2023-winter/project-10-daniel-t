@@ -62,7 +62,7 @@ Clone the project from github:
 ``` sh
 git clone https://github.com/csc301-2023-winter/project-10-daniel-t.git
 ```
-cd into backend directory
+go to the backend directory
 ``` sh
 cd project-10-daniel-t/backend
 ```
@@ -70,7 +70,7 @@ Add dependencies
 ``` sh
 pip install -r requirements.txt
 ```
-Then cd into my-app directory
+Then go to my-app(React) directory
 ``` sh
 cd ../
 cd deliverable-2/my-app
