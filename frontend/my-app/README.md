@@ -1,6 +1,6 @@
 # Code Structure
 * __**package.json**__ file contains the libraries required for building React application
-* All the code scripts are in the [src/components](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/deliverable-2/my-app/src/components) directory.
+* All the code scripts are in the [src/components](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app/src/components) directory.
 
 ## src/components
 * Common/navbar - A folder that implements the common component required on all pages, such as the navigation bar on top of each page.

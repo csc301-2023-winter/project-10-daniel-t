@@ -7,7 +7,7 @@
 * [Developing Tools](#developing-tools-required)
 * [Instructions for Future Maintainance](#instructions-for-future-maintainance)
 * [Folders and Files](#folders-and-files)
-* [Setup](#setup)
+* [Setup for Developers](#setup-for-developers)
 * [Usage](#usage)
 * [Features](#features)
 * [How are Tasks Managed](#how-are-tasks-managed)
@@ -31,13 +31,13 @@ pip3
 
 ``` sh
 Node.js
-``` 
+```
 - Node.js is a back-end JavaScript runtime environment which executes JavaScript code outside a web browser. This will enable us to run our API and back-end 
 services.
 
 ``` sh
 npm
-``` 
+```
 - npm is the default package manager for the JavaScript runtime environment Node.js.
 ``` sh
 Git
@@ -58,7 +58,7 @@ This section explains the purpose and content for each folder in the repository 
 
 Future development mainly be working in [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory.
 
-## Setup (For developer)
+## Setup for Developers
 Clone the project from github:
 ``` sh
 git clone https://github.com/csc301-2023-winter/project-10-daniel-t.git
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 Then go to my-app(React) directory
 ``` sh
 cd ../
-cd deliverable-2/my-app
+cd frontend/my-app
 ```
 
 Run npm install to load the required packages for React
@@ -102,8 +102,31 @@ Run yarn. The required packages for the application would be automatically insta
 yarn
 ```
 
-## Usage
+## Deployment
 The project is deployed on: http://vm008.teach.cs.toronto.edu/search
+
+### Deployment Process
+ <br>The deployment process has been partially automated via a deploy.sh shell script. The steps of shell scripts are explained below <br>
+ <br>**1. cd backend <br>
+ <br>2. pip install -r requirements.txt: Install all the required packages of backend server <br>
+ <br>3. nohup python3 app.py &: Run the flask server as a backend process <br>
+ <br>4. cd .. <br>
+ <br>5. cd frontend <br>
+ <br>6. cd my-app <br>
+ <br>7. npm install:Install all the required packages for the frontend React server <br>
+ <br>8. npm run build: Compile the React project into a production build <br>
+ <br>9. cd build <br>
+ <br>10. mkdir search: Since the deployed URL has “/search” component, due to the nature of how React projects are served, we need to create a search folder to ensure consistency. <br>
+ <br>11. mv * search: Move all the files to the newly created search folder. <br>
+ <br>12. npx serve &: Serve the build folder. <br>
+ <br>**
+Note that The current deployment only works for urls of “.../abstracts” for the backend server and “.../search” for the frontend server, assuming that backend url is reverse proxied to port 8000 and frontend url is reverse proxied to port 3000. If the url and/or the reverse proxy ports changes, the following files/settings will need to be changed accordingly: <br>
+ <br>**1. /backend/app.py: change the port number in main** <br>
+ <br>**2. /frontend/my-app/package.json: change homepage** <br>
+ <br>**3. /frontend/components/... : change the router settings and navigations**<br>
+
+<br>
+Please feel free to contact p.du@mail.utoronto.edu if facing any challenges when deploying to DCS. <br>
 
 ## Features 
 ### 1.	Home page interface: 
@@ -137,7 +160,7 @@ The search box on the webpage offers a convenient way for users to find specific
 ![kjahsdf](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/non_exist_search.png)
 ![no-results](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/no_results_found.png)
  <br>
- 
+
 (B)  
  ![network](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/exist_search.png)
  ![has-results](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/search_result.png)
@@ -174,8 +197,32 @@ npm test
 ```
 Run this code under my-app will run all tests in my-app file
 
+### Back end testing and setup:
+
+In back-end testing, we mainly test all the API views. 
+
+You can find the test code in [test.py](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/backend).
+
+```
+cd project-10-daniel-t/backend
+```
+
+Use the above code in terminal to go to the backend directory.
+
+```
+pip install -r requirements.txt
+```
+
+Use the above code to add dependencies if have not do so.
+
+```
+pytest test.py -v
+```
+
+Run this code under backend directory in terminal will run all tests in test.py file
+
 ## How are tasks managed
- 
+
 __**git clone**__ team repository to local
 * If clone failed due to authentication, or the repo is private and prevents editing access for teammates, either use a personal access token, or caching GitHub credentials by log into Git through terminal once to allow Git cache account information and permit access to the private repo.
 

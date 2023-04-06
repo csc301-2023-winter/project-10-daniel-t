@@ -11,7 +11,7 @@ const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Navbar />}>
-                    <Route path="search" element={<Index />}/>
+                    <Route path="" element={<Index />}/>
                     <Route path="contact/" element={<Contact/>}/>
                     <Route path="about/" element={<About/>}/>
                     <Route path="project/:projectId/detail/" element={<ProjectDetail/>}/>
