@@ -7,7 +7,7 @@
 * [Developing Tools](#developing-tools-required)
 * [Instructions for Future Maintainance](#instructions-for-future-maintainance)
 * [Folders and Files](#folders-and-files)
-* [Setup](#setup)
+* [Setup for Developers](#setup-for-developers)
 * [Usage](#usage)
 * [Features](#features)
 * [How are Tasks Managed](#how-are-tasks-managed)
@@ -58,7 +58,7 @@ This section explains the purpose and content for each folder in the repository 
 
 Future development mainly be working in [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory.
 
-## Setup (For developer)
+## Setup for Developers
 Clone the project from github:
 ``` sh
 git clone https://github.com/csc301-2023-winter/project-10-daniel-t.git
