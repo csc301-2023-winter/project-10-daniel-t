@@ -69,6 +69,7 @@ Note that The current deployment only works for urls of “.../abstracts” for 
 
 <br>
 Please feel free to contact p.du@mail.utoronto.edu if facing any challenges when deploying to DCS. <br>
+
 ## Features 
 ### 1.	Home page interface: 
 The link below will direct the user to the home page of the website. Several internship projects would show up at the bottom of the page. If the user is interested in one of the projects and clicks on the Details button, the user would be directed to the project page, which includes more specific details such as the project abstract, organization, and supervisor. 
