@@ -17,7 +17,7 @@ const Router = () => {
                 {/*    <Route path="project/:projectId/detail/" element={<ProjectDetail/>}/>*/}
                 {/*    <Route path=":searchInput/:year/:partner/:supervisor/result/" element={<SearchResult/>}/>*/}
                 {/*</Route>*/}
-                <Route path="/" element={<Navbar />}>
+                <Route path="/search" element={<Navbar />}>
                     <Route path="" element={<Index />}/>
                     <Route path="contact/" element={<Contact/>}/>
                     <Route path="about/" element={<About/>}/>
