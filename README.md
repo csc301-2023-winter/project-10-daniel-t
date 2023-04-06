@@ -11,6 +11,7 @@
 * [Usage](#usage)
 * [Features](#features)
 * [How are Tasks Managed](#how-are-tasks-managed)
+* [Automated testing](#automated-testing)
 * [Licences](#licenses)
 
 
@@ -155,6 +156,23 @@ Beneath the search box, you will find a list of tags that are currently trending
 ![tags](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/tags.png)
 <br>
 Figure 5. Tags that would show blue when the cursor is moved onto it.
+
+## Automated testing
+
+### Front end testing and setup:
+In front-end testing, we mainly test the search function. 
+You can find the test code in [index.test.js](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app/src/components/pages/Index).
+Four test cases test all filter and search functions.
+
+```sh
+npm install --save-dev jest @testing-library/react
+```
+Use the above code in console to install Jest and React testing library
+
+```sh
+npm test
+```
+Run this code under my-app will run all tests in my-app file
 
 ## How are tasks managed
  
