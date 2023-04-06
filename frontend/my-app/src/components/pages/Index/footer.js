@@ -22,7 +22,7 @@ function Footer() {
                   <Link to='https://mscac.utoronto.ca/feedback'>WEBSITE FEEDBACK</Link>
               </div>
               <div className='footer-link-items'>
-                  <Link to='/'>ACCESSIBILITY</Link>
+                  <Link to='https://studentlife.utoronto.ca/department/accessibility-services/'>ACCESSIBILITY</Link>
                   <Link to='about/'>ABOUT</Link>
                   <Link to='contact/'>CONTACTS</Link>
               </div>
