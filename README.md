@@ -109,16 +109,17 @@ The project is deployed on: http://vm008.teach.cs.toronto.edu/search
  <br>The deployment process has been partially automated via a deploy.sh shell script. The steps of shell scripts are explained below <br>
  <br>**1. cd backend <br>
  <br>2. pip install -r requirements.txt: Install all the required packages of backend server <br>
- <br>3. nohup python3 app.py &: Run the flask server as a backend process <br>
- <br>4. cd .. <br>
- <br>5. cd frontend <br>
- <br>6. cd my-app <br>
- <br>7. npm install:Install all the required packages for the frontend React server <br>
- <br>8. npm run build: Compile the React project into a production build <br>
- <br>9. cd build <br>
- <br>10. mkdir search: Since the deployed URL has “/search” component, due to the nature of how React projects are served, we need to create a search folder to ensure consistency. <br>
- <br>11. mv * search: Move all the files to the newly created search folder. <br>
- <br>12. npx serve &: Serve the build folder. <br>
+ <br>3. python3 ./search_logic/Import_Abstract.py: Do the logo caching and create dictionaries<br>
+ <br>4. nohup python3 app.py &: Run the flask server as a backend process <br>
+ <br>5. cd .. <br>
+ <br>6. cd frontend <br>
+ <br>7. cd my-app <br>
+ <br>8. npm install:Install all the required packages for the frontend React server <br>
+ <br>9. npm run build: Compile the React project into a production build <br>
+ <br>10. cd build <br>
+ <br>11. mkdir search: Since the deployed URL has “/search” component, due to the nature of how React projects are served, we need to create a search folder to ensure consistency. <br>
+ <br>12. mv * search: Move all the files to the newly created search folder. <br>
+ <br>13. npx serve &: Serve the build folder. <br>
  <br>**
 Note that The current deployment only works for urls of “.../abstracts” for the backend server and “.../search” for the frontend server, assuming that backend url is reverse proxied to port 8000 and frontend url is reverse proxied to port 3000. If the url and/or the reverse proxy ports changes, the following files/settings will need to be changed accordingly: <br>
  <br>**1. /backend/app.py: change the port number in main** <br>
