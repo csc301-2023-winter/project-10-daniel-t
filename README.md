@@ -80,8 +80,8 @@ Run npm install to load the required packages for React
 ``` sh
 npm install
 ```
-Start React app
-Note: If you run React on a local machine, the home page should be localhost:3000 instead of localhost:3000/search
+Start React app,
+if you run React on a local machine, the home page should be localhost:3000 instead of localhost:3000/search
 ``` sh
 npm start
 ```
