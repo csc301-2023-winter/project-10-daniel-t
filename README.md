@@ -97,7 +97,7 @@ yarn
 ```
 
 ## Usage
-Go to the webpage by clicking the following URL: http://vm008.teach.cs.toronto.edu/search
+The project is deployed on: http://vm008.teach.cs.toronto.edu/search
 
 ## Features 
 ### 1.	Home page interface: 
