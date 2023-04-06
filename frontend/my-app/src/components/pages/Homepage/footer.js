@@ -23,8 +23,8 @@ function Footer() {
               </div>
               <div className='footer-link-items'>
                   <Link to='https://studentlife.utoronto.ca/department/accessibility-services/'>ACCESSIBILITY</Link>
-                  <Link to='about/'>ABOUT</Link>
-                  <Link to='contact/'>CONTACTS</Link>
+                  <Link to='/search/about/'>ABOUT</Link>
+                  <Link to='/search/contact/'>CONTACTS</Link>
               </div>
           </div>
 
