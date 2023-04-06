@@ -2,7 +2,7 @@ import {Outlet, useNavigate} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {APIContext} from "../../../Contexts/APIContext";
 import Footer from '../Homepage/footer';
-import './about.css'
+// import './about.css'
 
 
 
