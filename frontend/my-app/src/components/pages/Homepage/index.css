@@ -1,19 +1,17 @@
 body{ margin: 0%; }
-/*.Title{*/
-/*    text-align: left;*/
-/*}*/
+.title{
+    text-align: left;
+    justify-content: left;
+}
 
-  /* Website title */
+
 .website {
     display: flex; 
     justify-content: center;
-    margin-bottom: 40px;
-    font-size: 3vmax;
-    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 4.5vmax;
+    margin-top: 20px;
 }
-
-/* Filters */
-
 
 #filters {
   display: flex; 

@@ -1,8 +1,20 @@
 /* Navigation Bar */
+#nav-logo{
 
+}
+#logo {
+   width: 140px;
+   height: 80px;
+
+    padding-right: 52%;
+}
 .topnav {
     overflow: hidden;
-    background-color: #002A5C;
+    background-color: #1E3866;
+    display:flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 50px;
 }
 
 .topnav a {
@@ -18,8 +30,3 @@
     background-color: #ddd;
     color: black;
 }
-
-/*.topnav a.active {*/
-/*    background-color: rgb(0, 139, 176);*/
-/*    color: white;*/
-/*}*/

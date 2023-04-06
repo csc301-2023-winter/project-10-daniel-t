@@ -196,7 +196,7 @@ const Index = () => {
         </Helmet>
 
 
-        <h1 className = "website">MScAC</h1>
+        <h1 className = "website">Search projects</h1>
 
 
         <div id="filters">

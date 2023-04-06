@@ -4,7 +4,7 @@ import {APIContext} from "../../../Contexts/APIContext";
 import './contact.css'
 import Helmet from "react-helmet"
 import Map from "../../map/index.js"
-
+import Footer from '../Homepage/footer';
 
 const Contact = () => {
     const {refresh, setRefresh} = useContext(APIContext)
@@ -45,6 +45,7 @@ const Contact = () => {
             <a href="mailto:admissions@mscac.utoronto.ca" id="email" style={{width: '100%'}}>Email: admissions@mscac.utoronto.ca</a>
         </div>
         </div>
+        <Footer/>
     </>
 }
 
