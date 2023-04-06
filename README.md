@@ -31,13 +31,13 @@ pip3
 
 ``` sh
 Node.js
-``` 
+```
 - Node.js is a back-end JavaScript runtime environment which executes JavaScript code outside a web browser. This will enable us to run our API and back-end 
 services.
 
 ``` sh
 npm
-``` 
+```
 - npm is the default package manager for the JavaScript runtime environment Node.js.
 ``` sh
 Git
@@ -137,7 +137,7 @@ The search box on the webpage offers a convenient way for users to find specific
 ![kjahsdf](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/non_exist_search.png)
 ![no-results](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/no_results_found.png)
  <br>
- 
+
 (B)  
  ![network](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/exist_search.png)
  ![has-results](https://github.com/csc301-2023-winter/project-10-daniel-t/blob/main/frontend/readme-images/search_result.png)
@@ -174,8 +174,32 @@ npm test
 ```
 Run this code under my-app will run all tests in my-app file
 
+### Back end testing and setup:
+
+In back-end testing, we mainly test all the API views. 
+
+You can find the test code in [test.py](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/backend).
+
+```
+cd project-10-daniel-t/backend
+```
+
+Use the above code in terminal to go to the backend directory.
+
+```
+pip install -r requirements.txt
+```
+
+Use the above code to add dependencies if have not do so.
+
+```
+pytest test.py -v
+```
+
+Run this code under backend directory in terminal will run all tests in test.py file
+
 ## How are tasks managed
- 
+
 __**git clone**__ team repository to local
 * If clone failed due to authentication, or the repo is private and prevents editing access for teammates, either use a personal access token, or caching GitHub credentials by log into Git through terminal once to allow Git cache account information and permit access to the private repo.
 
