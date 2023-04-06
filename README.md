@@ -46,7 +46,7 @@ Git
 ``` sh
 Editor
 ```
-- VS Code or Webstorm is recommended
+- You can use any editor such as VS Code , Webstorm or pycharm.
 
 ## Folders and Files
 This section explains the purpose and content for each folder in the repository for future reference for the developers.
