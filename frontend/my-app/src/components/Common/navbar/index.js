@@ -11,7 +11,7 @@ const Navbar = () => {
 
     let navigate = useNavigate()
     const showButton = () => {
-      if (window.innerWidth <= 800) {
+      if (window.innerWidth <= 960) {
         setButton(false);
       } else {
         setButton(true);

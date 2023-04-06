@@ -3,10 +3,10 @@
 
 }
 #logo {
-   width: 140px;
-   height: 80px;
+   width: 125px;
+   height: 75px;
 
-    padding-right: 52%;
+    margin-right:58%;
 }
 .topnav {
     overflow: hidden;
@@ -14,7 +14,7 @@
     display:flex;
     align-items: center;
     justify-content: right;
-    padding-right: 50px;
+    padding-right: 40px;
 }
 
 .topnav a {
