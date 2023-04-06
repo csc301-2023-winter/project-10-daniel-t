@@ -4,7 +4,7 @@
 ## Table of Content
 * [Description](#description)
 * [General Info](#general-info)
-* [Developing Tools](#developing-tools)
+* [Developing Tools](#developing-tools-required)
 * [Instructions for Future Maintainance](#instructions-for-future-maintainance)
 * [Folders and Files](#folders-and-files)
 * [Setup](#setup)
