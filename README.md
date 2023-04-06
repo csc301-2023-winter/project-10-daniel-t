@@ -50,9 +50,9 @@ Editor
 
 ## Folders and Files
 This section explains the purpose and content for each folder in the repository for future reference for the developers.
-* __**backend**__ - Includes the required dependencies for development, stored in __**requirement.txt**__ file.
-* __**frontend**__ - Basic UI outlined in html file. The html pages were then transfered into React component in the [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory, along with interactive functions implemented in JS.
-* __**testing**__ - Original testing cases for both frontend and backend. For the most updated backend testings, see __**app.py**__ and __**test.py**__ files in [backend](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/backend) directory
+* __**Backend**__ - Includes the required dependencies for development, stored in __**requirement.txt**__ file, backend is implemented in Flask.
+* __**Frontend**__ - Basic UI outlined in html file. The html pages were then transfered into React component in the [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory, along with interactive functions implemented in JS.
+* __**Testing**__ - Original testing cases for both frontend and backend. For the most updated backend testings, see __**app.py**__ and __**test.py**__ files in [backend](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/backend) directory
 * __**deploy.sh**__ - Script for website deployment
 
 Future development mainly be working in [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory.
