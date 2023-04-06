@@ -4,7 +4,7 @@
 ## Table of Content
 * [Description](#description)
 * [General Info](#general-info)
-* [Development Requirement](#development-requirement)
+* [Developing Tools](#developing-tools)
 * [Instructions for Future Maintainance](#instructions-for-future-maintainance)
 * [Folders and Files](#folders-and-files)
 * [Setup](#setup)
@@ -21,7 +21,7 @@ The project is a visualization and search interface for graduate internship abst
 Our application is a web interface that allows easy browsing, filtering, and searching of public abstracts of applied research internship projects carried out by MScAC students at the University of Toronto. It aims to attract technical talent at the graduate level and promote university research collaborations. The platform is designed to meet the needs of both students and industry partners and will be interactive, searchable, and responsive on desktop and mobile devices. With guidance from the Associate Director for MScAC Partnerships, we aim to create an informative and engaging website for all stakeholders.
 
 # Instructions for Future Maintainance
-## Development Requirement
+## Developing Tools Required
 ``` sh
 pip3
 ```
