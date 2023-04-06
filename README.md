@@ -57,7 +57,7 @@ This section explains the purpose and content for each folder in the repository 
 
 Future development mainly be working in [frontend/my-app](https://github.com/csc301-2023-winter/project-10-daniel-t/tree/main/frontend/my-app) directory.
 
-## Setup
+## Setup (For developer)
 Clone the project from github:
 ``` sh
 git clone https://github.com/csc301-2023-winter/project-10-daniel-t.git
