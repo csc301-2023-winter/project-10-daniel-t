@@ -8,7 +8,7 @@
 * [Instructions for Future Maintainance](#instructions-for-future-maintainance)
 * [Folders and Files](#folders-and-files)
 * [Setup for Developers](#setup-for-developers)
-* [Usage](#usage)
+* [Deployment](#deployment)
 * [Features](#features)
 * [How are Tasks Managed](#how-are-tasks-managed)
 * [Automated testing](#automated-testing)
