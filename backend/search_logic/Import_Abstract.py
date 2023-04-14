@@ -32,9 +32,9 @@ partners = [record['fields']['Partner'].strip().strip("\u202a") for record in pa
 partner_logos = [record['fields']['Partner logo'] if 'Partner logo' in record['fields']
                  else None
                  for record in parsed_dict['records']]
-partner_supervisors = [record['fields']['Partner supervisor'].strip().strip("\u202a")
+partner_supervisors = [record['fields'].get('Partner supervisor', "").strip().strip("\u202a")
                        for record in parsed_dict['records']]
-academic_supervisors = [record['fields']['Academic supervisor'].strip().strip("\u202a")
+academic_supervisors = [record['fields'].get('Academic supervisor', "").strip().strip("\u202a")
                         for record in parsed_dict['records']]
 public_abstracts = [record['fields']['Public abstract (ARIA)'].strip().strip("\u202a")
                     for record in parsed_dict['records']]
